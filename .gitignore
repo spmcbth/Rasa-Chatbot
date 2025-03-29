@@ -1,0 +1,21 @@
+# Bỏ qua môi trường ảo
+rasa_env/
+.venv/
+
+# Bỏ qua cache của Python & Rasa
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+Rasa/.rasa/cache/
+
+test_token.py
+models/
+.env
+credentials.yml
+
+# Bỏ qua log, database cục bộ và file tạm trên Windows
+*.log
+*.db
+*.sqlite3
+Thumbs.db  # File hệ thống của Windows

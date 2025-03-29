@@ -1,0 +1,1158 @@
+version: "3.1"
+
+nlu:    
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - xin chào
+    - chào bạn
+    - ní hạo 
+    - chào buổi sáng
+    - chào buổi tối
+    - chào buổi chiều
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - tạm biệt
+    - bye nhé 
+    - gặp lại sau nhé
+    - hẹn gặp lại
+
+- intent: thank
+  examples:  |
+    - cảm ơn bạn nhé
+    - cảm ơn
+    - thanks
+    - cám ơn
+    - tuyệt
+    - good
+    - tốt
+    - làm tốt lắm
+    - hay đấy
+    - rất tốt
+    - tuyệt lắm đó
+    - hay lắm
+    - bạn làm tốt lắm
+    - Rất cảm ơn bạn
+    - mơn bà nhe 
+    - thank you
+
+- intent: help
+  examples:  |
+    - help
+    - cứu 
+    - giúp tui với
+    - help bot
+   
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - bạn có phải là bot?
+    - bạn là gì?
+    - bạn là người hay bot?
+    - bạn phải bot hong?
+
+- intent: quy_dinh
+  examples: |
+    - phạm vi điều chỉnh của quy định về công tác học vụ
+    - phạm vi điều chỉnh
+    - phạm vi điều chỉnh quy định công tác học vụ
+    - phạm vi của quy định công tác học vụ
+    - phạm vi quy định công tác học vụ
+    - phạm vi quy định nội quy trường
+    - công tác học vụ quy định về những gì
+    - công tác học vụ quy định gì
+    - quy định về công tác học vụ bao gồm những gì
+    - quy định công tác học vụ bao gồm những gì
+    - công tác học vụ bao gồm những gì
+    - quy chế học vụ
+
+- intent: doi_tuong_ap_dung
+  examples: |
+    - quy định về công tác học vụ dành cho những đối tượng nào
+    - quy định về công tác học vụ dành cho đối tượng nào
+    - quy định công tác học vụ dành cho đối tượng nào
+    - quy định về công tác học vụ áp dụng cho đối tượng nào
+    - quy định về công tác học vụ dành cho ai
+    - quy định về công tác học vụ áp dụng cho ai
+    - đối tượng áp dụng quy định về công tác học vụ
+    - đối tượng áp dụng công tác học vụ
+    - công tác học vụ áp dụng cho đối tượng nào
+    - công tác học vụ áp dụng cho ai
+    - công tác học vụ dành cho ai
+    - công tác học vụ dành cho đối tượng nào
+
+- intent: sv_chinh_quy
+  examples: |
+    - sinh viên hệ chính quy là gì
+    - sinh viên hệ chính quy của trường đại học cần thơ là gì
+    - thế nào là sinh viên hệ chính quy
+    - thế nào là sinh viên hệ chính quy của trường đại học cần thơ
+    - khi nào trở thành sinh viên hệ chính quy
+    - khi nào được công nhận là sinh viên hệ chính quy
+    - điều kiện để trở thành sinh viên chính quy của trường đại học cần thơ
+    - điều kiện trở thành sinh viên chính quy
+
+- intent: quy_dinh_dong_phuc
+  examples: |
+    - yêu cầu trang phục của sinh viên
+    - trang phục sinh viên
+    - đồng phục sinh viên
+    - yêu cầu đồng phục sinh viên
+    - quy định về trang phục sinh viên
+    - quy định trang phục sinh viên
+    - quy định đồng phục sinh viên
+    - trang phục sinh viên khi đến lớp
+    - đồng phục sinh viên khi đến lớp
+
+- intent: quy_dinh_sv
+  examples: |
+    - quy định đối với sinh viên
+    - quy định đối với sinh viên đại học cần thơ
+    - quy định dành cho sinh viên
+    - quy định dành cho sinh viên đại học cần thơ
+    - sinh viên cần tuân thủ những quy định nào
+    - nội quy quy định dành cho sinh viên
+    - nội quy quy định đối với sinh viên
+    - những điều sinh viên cần lưu ý khi theo học tại trường
+    - những điều sinh viên cần lưu ý
+    - sinh viên cần làm theo những quy định nào
+
+- intent: chuong_trinh_dao_tao
+  examples: |
+    - chương trình đào tạo
+    - chương trình đào tạo gồm những gì
+    - chương trình đào tạo có gì
+    - chương trình đào tạo là gì
+    - chương trình đào tạo bao gồm những gì
+    - có gì trong chương trình đào tạo
+    - thế nào là chương trình đào tạo
+    - thông tin về chương trình đào tạo
+    - chương trình đào tạo của mỗi ngành học
+    - chương trình đào tạo của mỗi ngành gồm những gì
+    - chương trình đào tạo của mỗi ngành có gì
+    - có gì trong chương trình đào tạo của mỗi ngành học
+
+- intent: xet_tot_nghiep
+  examples: |
+    - điều kiện sinh viên được xét cấp bằng tốt nghiệp
+    - khi nào sinh viên được xét cấp bằng tốt nghiệp
+    - xét cấp bằng tốt nghiệp
+    - xét cấp bằng tốt nghiệp khi nào
+    - cần gì để sinh viên được xét cấp bằng tốt nghiệp
+    - điều kiện để được xét cấp bằng tốt nghiệp
+    - khi nào được xét cấp bằng tốt nghiệp
+    - quy định xét công nhận tốt nghiệp là gì
+    - công nhận tốt nghiệp
+    - điều kiện công nhận tốt nghiệp
+    - những điều kiện công nhận tốt nghiệp
+    - điều kiện xét tốt nghiệp
+    - tốt nghiệp cần những gì
+    - tốt nghiệp cần điều kiện gì
+    - điều kiện để tốt nghiệp
+    - điều kiện để xét tốt nghiệp
+    - xét tốt nghiệp cần những điều kiện gì
+    - điểm trung bình tích lũy bao nhiêu để được xét tốt nghiệp
+    - điểm trung bình tích lũy cần bao nhiêu để tích lũy
+    - mức điểm trung bình tích lũy để xét tốt nghiệp
+    - mức điểm giáo dục quốc phòng an ninh để xét tốt nghiệp
+    - điểm giáo dục quốc phòng an ninh để xét tốt nghiệp
+
+- intent: tgian_dao_tao
+  examples: |
+    - thời gian đào tạo
+    - thế nào là thời gian đào tạo
+    - thời gian đào tạo là gì
+    - thời gian đào tạo như thế nào
+    - thời gian đào tạo các ngành có giống nhau không
+    - thời gian cho phép để hoàn thành chương trình đào tạo
+    - thời gian thiết kế cho một chương trình đào tạo
+    - thời gian hoàn thành chương trình đào tạo
+    - thời hạn hoàn thành chương trình đào tạo
+
+- intent: quy_dinh_hoc_ky
+  examples: |
+    - mỗi năm có bao nhiêu học kỳ
+    - mỗi năm có tối đa bao nhiêu học kỳ
+    - có bao nhiêu học kỳ trong một năm học
+    - số lượng học kỳ trong một năm
+    - tổng lượng học kỳ trong một năm
+    - một năm có bao nhiêu học kỳ
+    - một năm gồm mấy học kỳ
+    - một năm gồm bao nhiêu học kỳ
+    - số học kỳ có trong năm học
+    - học kỳ chính và học kỳ phụ của năm
+    - thời gian học của một học kỳ 
+
+- intent: hoc_ky
+  examples: |
+    - học kỳ 1 kéo dài bao lâu
+    - học kỳ 2 kéo dài bao lâu
+    - học kỳ 3 kéo dài bao lâu 
+    - học kì chính học trong bao lâu
+    - học kỳ 1 học trong bao lâu
+    - học kỳ 2 học trong bao lâu
+    - học kỳ 3 học trong bao lâu 
+
+- intent: hoc_ky_phu
+  examples: |
+    - đâu là học kỳ phụ
+    - học kỳ nào là học kỳ phụ
+    - học kỳ phụ
+    - học kỳ phụ là học kỳ nào
+    - học kỳ phụ kéo dài bao lâu 
+
+- intent: hoc_phan
+  examples: |
+    - học phần là gì
+    - học phần
+    - khái niệm về học phần
+    - khái niệm học phần
+    - thế nào là học phần
+    - định nghĩa học phần
+    - định nghĩa về học phần
+    - thông tin học phần
+    - thông tin về học phần
+
+- intent: hoc_phan_bat_buoc
+  examples: |
+    - học phần bắt buộc là gì
+    - học phần bắt buộc
+    - khái niệm về học phần bắt buộc
+    - khái niệm học phần bắt buộc
+    - thế nào là học phần bắt buộc
+    - định nghĩa học phần bắt buộc
+    - định nghĩa về học phần bắt buộc
+    - thông tin học phần bắt buộc
+    - thông tin về học phần bắt buộc
+
+- intent: hoc_phan_tu_chon
+  examples: |
+    - học phần tự chọn là gì
+    - học phần tự chọn
+    - khái niệm về học phần tự chọn
+    - khái niệm học phần tự chọn
+    - thế nào là học phần tự chọn
+    - định nghĩa học phần tự chọn
+    - định nghĩa về học phần tự chọn
+    - thông tin học phần tự chọn
+    - thông tin về học phần tự chọn
+
+- intent: hoc_phan_tien_quyet
+  examples: |
+    - học phần tiên quyết là gì
+    - học phần tiên quyết
+    - khái niệm về học phần tiên quyết
+    - khái niệm học phần tiên quyết
+    - thế nào là học phần tiên quyết
+    - định nghĩa học phần tiên quyết
+    - định nghĩa về học phần tiên quyết
+    - thông tin học phần tiên quyết
+    - thông tin về học phần tiên quyết
+
+- intent: hoc_phan_song_hanh
+  examples: |
+    - học phần song hành là gì
+    - học phần nào là học phần song hành
+    - quy định về học phần song hành
+    - thông tin về học phần song hành
+    - định nghĩa học phần song hành
+    - học phần song hành
+    - thông tin học phần song hành
+
+- intent: hoc_phan_dieu_kien
+  examples: |
+    - học phần điều kiện là gì
+    - học phần nào được coi là học phần điều kiện
+    - quy định về học phần điều kiện
+    - học phần điều kiện là gì
+    - học phần điều kiện
+    - khái niệm về học phần điều kiện
+    - khái niệm học phần điều kiện
+    - thế nào là học phần điều kiện
+    - định nghĩa học phần điều kiện
+    - định nghĩa về học phần điều kiện
+    - thông tin học phần điều kiện
+    - thông tin về học phần điều kiện
+    - các học phần điều kiện
+    - các học phần điều kiện gồm những học phần nào
+    - học phần nào là học phần điều kiện
+    - học phần là học phần điều kiện
+    - học phần điều kiện gồm các môn nào
+    - học phần được xem là học phần điều kiện
+    - có các học phần điều kiện nào
+
+- intent: lop_hoc_phan
+  examples: |
+    - lớp học phần là gì
+    - lớp học phần có nghĩa là gì
+    - quy định về lớp học phần
+    - lớp học phần
+    - khái niệm về lớp học phần
+    - khái niệm lớp học phần
+    - thế nào là lớp học phần
+    - định nghĩa lớp học phần
+    - định nghĩa về lớp học phần
+    - thông tin lớp học phần
+    - thông tin về lớp học phần
+
+- intent: lop_chuyen_nganh
+  examples: |
+    - lớp chuyên ngành là gì
+    - lớp chuyên ngành có đặc điểm gì
+    - quy định về lớp chuyên ngành
+    - lớp chuyên ngành
+    - khái niệm về lớp chuyên ngành
+    - khái niệm lớp chuyên ngành
+    - thế nào là lớp chuyên ngành
+    - định nghĩa lớp chuyên ngành
+    - định nghĩa về lớp chuyên ngành
+    - thông tin lớp chuyên ngành
+    - thông tin về lớp chuyên ngành
+
+- intent: tin_chi
+  examples: |
+    - khối lượng học tập là gì
+    - tín chỉ là gì
+    - tín chỉ
+    - khái niệm về tín chỉ
+    - khái niệm tín chỉ
+    - thế nào là tín chỉ
+    - định nghĩa tín chỉ
+    - định nghĩa về tín chỉ
+    - thông tin tín chỉ
+    - thông tin về tín chỉ
+    - thời gian học tập của một tín chỉ là bao nhiêu
+
+- intent: thoi_luong_tin_chi
+  examples: |
+    - một tín chỉ tương đương với bao nhiêu giờ học
+    - một tín chỉ bao gồm bao nhiêu giờ học trên lớp
+    - mỗi tín chỉ có bao nhiêu giờ giảng dạy
+    - một tín chỉ có bao nhiêu giờ thực hành
+    - số giờ học của một tín chỉ thực hành là bao nhiêu
+    - thời lượng tín chỉ được quy định như thế nào
+    - thời lượng tín chỉ
+    - thời lượng của tín chỉ
+    - thời lượng của tín chỉ được quy định như thế nào
+    - quy định về thời lượng của tín chỉ
+    - một tín chỉ bằng bao nhiêu tiết học
+    - một tín chỉ quỹ ra bao nhiêu tiết học
+    - bao nhiêu tiết học bằng một tín chỉ
+
+- intent: tiet_hoc
+  examples: |
+    - mỗi tiết học kéo dài bao lâu
+    - một tiết học trên lớp có thời gian bao nhiêu phút
+    - tiết học trong trường đại học kéo dài bao nhiêu phút
+    - một tiết học kéo dài bao lâu
+    - thời gian của một tiết học
+    - một tiết học được tính bao lâu
+    - một tiết học mấy phút
+    - thời gian học một tiết là bao lâu
+    - thời gian học một tiết
+    - một tiết học học trong bao lâu"
+    - một tiết học trong bao lâu
+    - học bao lâu thì kết thúc tiết học
+
+- intent: tin_chi_hoc_4_nam
+  examples: |
+    - chương trình đào tạo 4 năm học bao nhiêu chỉ
+    - học 4 năm cần bao nhiêu chỉ
+    - tổng chỉ chương trình đào tạo 4 năm
+    - lượng tín chỉ khi học 4 năm
+    - tín chỉ học 4 năm
+    - số tín chỉ cần hoàn thành trong khung đào tạo 4 năm
+    - cần hoàn thành bao nhiêu chỉ nếu học 4 năm
+    - chương trình đào tạo 4 năm cần bao nhiêu chỉ để tốt nghiệp
+    - số chỉ cần học theo chương trình đào tạo 4 năm
+    - tổng chỉ khi học 4 năm
+    - học bao nhiêu chỉ để hoàn thành chương trình 4 năm
+
+- intent: tin_chi_hoc_4_5_nam
+  examples: |
+    - chương trình đào tạo 4.5 năm học bao nhiêu chỉ
+    - học 4.5 năm cần bao nhiêu chỉ
+    - tổng chỉ chương trình đào tạo 4.5 năm
+    - lượng tín chỉ khi học 4.5 năm
+    - tín chỉ học 4.5 năm
+    - số tín chỉ cần hoàn thành trong khung đào tạo 4.5 năm
+    - cần hoàn thành bao nhiêu chỉ nếu học 4.5 năm
+    - chương trình đào tạo 4.5 năm cần bao nhiêu chỉ để tốt nghiệp
+    - số chỉ cần học theo chương trình 4.5 năm
+    - tín chỉ học 4 năm rưỡi
+    - tổng chỉ khi học 4 năm rưỡi
+    - học bao nhiêu chỉ để hoàn thành chương trình 4 năm rưỡi
+
+- intent: tin_chi_hoc_5_nam
+  examples: |
+    - chương trình đào tạo 5 năm học bao nhiêu chỉ
+    - học 5 năm cần bao nhiêu chỉ
+    - tổng chỉ chương trình đào tạo 5 năm
+    - lượng tín chỉ khi học 5 năm
+    - tín chỉ học 5 năm
+    - số tín chỉ cần hoàn thành trong khung đào tạo 5 năm
+    - cần hoàn thành bao nhiêu chỉ nếu học 5 năm
+    - chương trình đào tạo 5 năm cần bao nhiêu chỉ để tốt nghiệp
+    - số chỉ cần học theo chương trình 5 năm
+    - tổng chỉ khi học 5 năm
+    - học bao nhiêu chỉ để hoàn thành chương trình 5 năm
+
+- intent: xet_hoc_bong
+  examples: |
+    - điều kiện để xét học bổng
+    - điều kiện xét học bổng
+    - học bổng
+    - xét học bổng
+    - tiêu chí để xét học bổng
+    - tiêu chuẩn xét học bổng
+    - yêu cầu xét học bổng
+    - yêu cầu để xét học bổng
+    - muốn nhận học bổng cần gì
+    - nhận học bổng cần gì
+    - cần gì để nhận học bổng
+    - nhận học bổng
+    - cách nhận học bổng
+
+- intent: muc_hoc_bong
+  examples: |
+    - tiêu chuẩn cho từng mức học bổng
+    - tiêu chuẩn mức học bổng
+    - tiêu chuẩn học bổng
+    - mức học bổng
+    - phân loại học bổng
+    - loại học bổng
+    - học bổng có mấy loại
+    - học bổng có bao nhiêu loại
+    - tiêu chuẩn của từng loại học bổng
+    - tiêu chuẩn từng loại học bổng
+
+- intent: quy_dinh_muc_hoc_bong
+  examples: |
+    - mức học bổng do ai quyết định
+    - mức học bổng do ai quy định
+    - ai quy định mức học bổng
+    - ai quyết định mức học bổng
+    - mức học bổng được quyết định bởi ai
+    - mức học bổng được quy định bởi ai
+
+- intent: quy_dinh_muc_hoc_bong
+  examples: |
+    - mức học bổng do ai quyết định
+    - mức học bổng do ai quy định
+    - ai quy định mức học bổng
+    - ai quyết định mức học bổng
+    - mức học bổng được quyết định bởi ai
+    - mức học bổng được quy định bởi ai
+
+- intent: tro_cap_xa_hoi
+  examples: |
+    - đối tượng được nhận trợ cấp xã hội
+    - đối tượng nhận trợ cấp xã hội
+    - ai được nhận trợ cấp xã hội
+    - điều kiện nhận trợ cấp xã hội
+    - điều kiện được nhận trợ cấp xã hội
+    - nhận trợ cấp xã hội
+    - nhận trợ cấp
+    - trợ cấp
+    - trợ cấp xã hội
+    - ai được hưởng trợ cấp xã hội
+
+- intent: hoc_phi
+  examples: |
+    - học phí
+    - mức học phí
+    - mức học phí tính theo cái gì
+    - cái gì quy ra mức học phí
+    - mức học phí do ai quy định
+    - mức học phí do ai quyết định
+    - ai quy định mức học phí
+    - ai quyết định mức học phí
+    - mức học phí dựa vào cái gì
+
+- intent: tre_hoc_phi
+  examples: |
+    - xử lý khi trễ đóng học phí
+    - trễ đóng học phí
+    - trễ học phí
+    - đóng trễ học phí bị xử lý như thế nào
+    - đóng trễ học phí bị gì
+    - muộn học phí
+    - đóng học phí muộn
+    - quá hạn đóng học phí
+    - quá hạn học phí
+    - xử lý khi quá hạn đóng học phí
+    - xử lý khi quá hạn học phí
+    - quá hạn đóng học phí bị gì
+    - ra sao nếu trễ học phí
+    - có thể đóng trễ học phí không
+
+- intent: tin_dung_sv
+  examples: |
+    - tính dụng sinh viên là gì
+    - tính dụng sinh viên
+    - khái niệm về tính dụng sinh viên
+    - khái niệm tính dụng sinh viên
+    - thế nào là tính dụng sinh viên
+    - định nghĩa tính dụng sinh viên
+    - định nghĩa về tính dụng sinh viên
+    - thông tin tính dụng sinh viên
+    - thông tin về tín dụng của sinh viên
+
+- intent: chuyen_truong
+  examples: |
+    - khi nào được xét chuyển trường
+    - khi nào được chuyển trường
+    - xét chuyển trường
+    - chuyển trường
+    - điều kiện xét chuyển trường
+    - yêu cầu xét chuyển trường
+    - điều kiện để được chuyển trường
+
+- intent: thuc_tap_thuc_te
+  examples: |
+    - thực tập thực tế là gì
+    - học phần thực tập thực tế là gì
+    - học phần thực tập thực tế của sinh viên là gì
+    - sinh viên thực tập thực tế để làm gì
+
+- intent: tgian_thuc_tap
+  examples: |
+    - thực tập thực tế khi nào
+    - khi nào thực tập thực tế
+    - thực tập thực tế thời gian nào
+    - thời gian nào thực tập thực tế
+    - học kì nào thực tập thực tế
+    - thực tập thực tế học kì nào
+    - thực tập thực tế mấy tuần
+    - thực tập thực tế mấy tháng
+    - thực tập thực tế bao lâu
+    - thực tập thực tế mấy ngày
+
+- intent: dieu_kien_thuc_tap
+  examples: |
+    - điều kiện thực tập thực tế
+    - điều kiện để thực tập thực tế
+    - để thực tập thực tế cần làm gì
+    - để thực tập thực tế cần gì
+    - có cần đăng kí thực tập thực tế không
+    - thực tập thực tế có cần đăng kí không
+    - đăng kí thực tập
+    - thực tập thực tế đăng kí như thế nào
+    - đăng kí thực tập thực tế như thế nào
+    - hoàn thành môn nào mới được thực tập thực tế
+    - được thực tập thực tế khi học xong môn nào
+    - bao nhiêu chỉ mới được thực tập thực tế
+    - rớt môn có được thực tập thực tế không
+    - có được thực tập thực tế khi rớt môn không
+    - điểm trung bình bao nhiêu thì được thực tập thực tế
+    - điểm trung bình tối thiểu bao nhiêu thì được thực tập thực tế
+    - tối thiểu bao nhiêu chỉ mới được thực tập thực tế
+    - được thực tập thực tế cần tích lũy ít nhất bao nhiêu chỉ
+    - được thực tập thực tế cần tích lũy bao nhiêu chỉ
+
+- intent: sau_thuc_tap
+  examples: |
+    - sau khi thực tập thực tế cần làm gì
+    - cần làm gì sau khi thực tập thực tế
+    - làm gì sau khi thực tập thực tế
+    - việc cần làm sau khi thực tập thực tế
+    - sau khi thực tập thực tế cần làm việc gì
+
+- intent: luan_van_tot_nghiep
+  examples: |
+    - sau khi hoàn thành luận văn phải làm gì
+    - sau khi hoàn thành luận văn tốt nghiệp phải làm gì
+    - thành viên hội đồng bảo vệ
+    - thành viên hội đồng bảo vệ luận văn
+    - thành viên hội đồng bảo vệ luận văn tốt nghiệp
+    - hội đồng bảo vệ gồm những ai
+    - hội đồng bảo vệ luận văn gồm những ai
+    - hội đồng bảo vệ luận văn tốt nghiệp gồm những ai
+    - hội đồng bảo vệ luận văn tốt nghiệp
+    - hội đồng bảo vệ
+    - bảo vệ luận án
+    - bảo vệ luận văn tốt nghiệp
+    - điểm luận văn
+    - điểm luận văn tốt nghiệp
+    - cách tính điểm luận văn
+    - cách tính điểm luận văn tốt nghiệp
+    - tính điểm luận văn thế nào
+    - tính điểm luận văn tốt nghiệp như thế nào
+    - tính điểm luận văn
+    - tính điểm luận văn tốt nghiệp
+    - làm thế nào để tính điểm luận văn
+    - làm thế nào để tính điểm luận văn tốt nghiệp
+
+- intent: tin_chi_luan_van
+  examples: |
+    - số lượng tín chỉ luận văn
+    - số lượng tín chỉ luận văn tốt nghiệp
+    - số tín chỉ của luận văn
+    - số tín chỉ của luận văn tốt nghiệp
+    - tín chỉ luận văn
+    - tín chỉ luận văn tốt nghiệp
+    - luận văn tương đương báo nhiêu tín chỉ
+    - luận văn tốt nghiệp tương đương báo nhiêu tín chỉ
+    - luận văn bằng bao nhiêu tín chỉ
+    - luận văn tốt nghiệp bằng bao nhiêu tín chỉ
+
+- intent: tieu_luan_tot_nghiep
+  examples: |
+    - ai chấm điểm tiểu luận
+    - ai chấm điểm tiểu luận tốt nghiệp
+    - tiểu luận do ai chấm điểm
+    - tiểu luận tốt nghiệp do ai chấm điểm
+    - chấm điểm tiểu luận
+    - chấm điểm tiểu luận tốt nghiệp
+    - tiểu luận có cần phải bảo vệ trước hội đồng không
+    - tiểu luận tốt nghiệp có cần phải bảo vệ trước hội đồng không
+    - có phải bảo vệ tiểu luận trước hội đồng không
+    - có cần phải bảo vệ tiểu luận tốt nghiệp trước hội đồng không
+
+- intent: tin_chi_tieu_luan
+  examples: |
+    - số lượng tín chỉ tiểu luận
+    - số lượng tín chỉ tiểu luận tốt nghiệp
+    - số tín chỉ của tiểu luận
+    - số tín chỉ của tiểu luận tốt nghiệp
+    - tín chỉ tiểu luận
+    - tín chỉ tiểu luận tốt nghiệp
+    - tiểu luận tương đương bao nhiêu tín chỉ
+    - tiểu luận tốt nghiệp tương đương bao nhiêu tín chỉ
+    - tiểu luận bằng bao nhiêu tín chỉ
+    - tiểu luận tốt nghiệp bằng bao nhiêu tín chỉ
+
+- intent: tich_luy_TC_tot_nghiep
+  examples: |
+    - sinh viên có thể không làm luận văn không
+    - sinh viên có thể không làm luận văn tốt nghiệp không
+    - có thể không làm luận văn không
+    - có thể không làm luận văn tốt nghiệp không
+    - sinh viên có thể không làm tiểu luận không
+    - sinh viên có thể không làm tiểu luận tốt nghiệp không
+    - có thể không làm tiểu luận không
+    - có thể không làm tiểu luận tốt nghiệp không
+    - cần làm gì để tích lũy tín chỉ nếu không làm luận văn
+    - cần làm gì để tích lũy tín chỉ tốt nghiệp nếu không làm luận văn tốt nghiệp
+    - cần làm gì để tích lũy tín chỉ nếu không làm tiểu luận
+    - cần làm gì để tích lũy tín chỉ tốt nghiệp nếu không làm tiểu luận tốt nghiệp
+
+- intent: nhan_de_tai
+  examples: |
+    - làm sao để nhận đề tài luận văn
+    - làm sao để nhận đề tài luận văn tốt nghiệp
+    - làm sao để nhận đề tài tiểu luận
+    - làm sao để nhận đề tài tiểu luận tốt nghiệp
+    - cách nhận đề tài luận văn
+    - cách nhận đề tài luận văn tốt nghiệp
+    - cách nhận đề tài tiểu luận
+    - cách nhận đề tài tiểu luận tốt nghiệp
+    - làm thế nào để nhận đề tài luận văn
+    - làm thế nào để nhận đề tài luận văn tốt nghiệp
+    - làm thế nào để nhận đề tài tiểu luận
+    - làm thế nào để nhận đề tài tiểu luận tốt nghiệp
+    - nhận đề tài luận văn như thế nào
+    - nhận đề tài luận văn tốt nghiệp như thế nào
+    - nhận đề tài tiểu luận như thế nào
+    - nhận đề tài tiểu luận tốt nghiệp như thế nào
+
+- intent: dang_ky_LV_TL
+  examples: |
+    - làm luận văn có cần phải đăng ký học phần không
+    - làm luận văn tốt nghiệp có cần phải đăng ký học phần không
+    - làm tiểu luận có cần phải đăng ký học phần không
+    - làm tiểu luận tốt nghiệp có cần phải đăng ký học phần không
+    - có cần phải đăng ký học phần để làm luận văn không
+    - có cần phải đăng ký học phần để làm luận văn tốt nghiệp không
+    - có cần phải đăng ký học phần để làm tiểu luận không
+    - có cần phải đăng ký học phần để làm tiểu luận tốt nghiệp không
+    - có bắt buộc đăng ký học phần để làm luận văn không
+    - có bắt buộc đăng ký học phần để làm luận văn tốt nghiệp không
+    - có bắt buộc đăng ký học phần để làm tiểu luận không
+    - có bắt buộc đăng ký học phần để làm tiểu luận tốt nghiệp không
+
+- intent: diem_kem_LV_TL
+  examples: |
+    - nhận điểm kém của luận văn thì phải làm sao
+    - nhận điểm kém của luận văn tốt nghiệp thì phải làm sao
+    - nhận điểm kém của tiểu luận tốt nghiệp thì phải làm sao
+    - nhận điểm kém của tiểu luận tốt nghiệp phải làm sao
+    - có thể đăng ký làm lại luận văn không
+    - có thể đăng ký làm lại luận văn tốt nghiệp không
+    - có thể đăng ký làm lại tiểu luận không
+    - có thể đăng ký làm lại tiểu luận tốt nghiệp không
+    - có thể đăng ký các học phần thay thế khi bị điềm F luận văn tốt nghiệp không
+    - có thể đăng ký các học phần thay thế nếu bị điềm F luận văn tốt nghiệp không
+    - có thể đăng ký các học phần thay thế khi bị điềm F tiểu luận không
+    - có thể đăng ký các học phần thay thế khi bị điềm F tiểu luận tốt nghiệp không
+    - bị điểm F luận văn phải làm sao
+    - bị điểm F luận văn tốt nghiệp phải làm sao
+    - bị điểm F tiểu luận phải làm sao
+    - bị điểm F tiểu luận tốt nghiệp phải làm sao
+
+- intent: tgian_xet_tot_nghiep
+  examples: |
+    - thời gian xét tốt nghiệp
+    - xét tốt nghiệp vào thời gian nào
+    - những tháng xét tốt nghiệp
+    - nhận bằng tốt nghiệp
+    - thời gian nhận bằng tốt nghiệp
+    - lễ trao bằng tốt nghiệp diễn ra vào thời gian nào
+    - thời gian diễn ra lễ trao bằng tốt nghiệp
+    - lễ trao bằng tốt nghiệp
+    - bằng tốt nghiệp
+
+- intent: dky_xet_tot_nghiep
+  examples: |
+    - đăng ký xét tốt nghiệp
+    - đăng ký xét tốt nghiệp như thế nào
+    - làm thế nào để đăng ký xét tốt nghiệp
+    - cách đăng ký xét tốt nghiệp
+    - làm sao để đăng ký xét tốt nghiệp
+    - làm thế nào để đăng ký xét tốt nghiệp
+
+- intent: hoi_dong_xet_tot_nghiep
+  examples: |
+    - hội đồng xét tốt nghiệp
+    - ai chịu trách nhiệm xét tốt nghiệp
+    - ai là người xét tốt nghiệp
+    - những người chịu trách nhiệm xét tốt nghiệp
+    - xét tốt nghiệp là trách nhiệm của ai
+    - xét tốt nghiệp là nhiệm vụ của ai
+    - ai công nhận sinh viên đủ điều kiện tốt nghiệp
+    - trách nhiệm công nhận sinh viên đủ điều kiện tốt nghiệp là của ai
+    - nhiệm vụ công nhận sinh viên đủ điều kiện tốt nghiệp là của ai
+    - ai là người quyết định công nhận tốt nghiệp
+    - quyết định công nhận tốt nghiệp thuộc về ai
+    - ai thẩm định điều kiện tốt nghiệp của sinh viên
+    - thẩm định điều kiện tốt nghiệp
+    - thẩm định điều kiện tốt nghiệp là công việc của ai
+    - thẩm định điều kiện tốt nghiệp là trách nhiệm của ai
+    - ai ký quyết định công nhận tốt nghiệp
+    - quyết định công nhận tốt nghiệp
+
+- intent: cong_nhan_tot_nghiep
+  examples: |
+    - có cần nộp phí để nhận bản sao bằng tốt nghiệp không
+    - bản sao bằng tốt nghiệp
+    - đủ điều kiện tốt nghiệp
+    - đáp ứng điều kiện tốt nghiệp
+    - nhận quyết định công nhận tốt nghiệp
+
+- intent: danh_gia_hoc_phan
+  examples: |
+    - cách đánh giá học phần như thế nào
+    - đánh giá điểm học phần như thế nào
+    - cho biết cách đánh giá học phần
+    - đánh giá học phần như thế nào
+    - đánh giá học phần của sinh viên như thế nào
+    - học phần của sinh viên được đánh giá như thế nào
+    - điểm học bao gồm các thành phần nào
+    - điểm học phần được đánh giá như thế nào
+
+- intent: hoc_phan_thuc_hanh
+  examples: |
+    - điểm học phần thực hành được đánh giá như thế nào
+    - cách tính điểm học phần thực hành
+    - cho biết cách đánh giá điểm của học phần thực hành
+    - học phần thực hành của sinh viên được đánh giá như thế nào
+    - đánh giá điểm học phần của sinh viên
+    - cách đánh giá điểm học phần thực hành của sinh viên
+    - điểm học phần thực hành tính như thế nào
+
+
+- intent: diem_hoc_phan
+  examples: |
+    - điểm học phần được đánh giá theo thang điểm nào
+    - điểm học phần được làm tròn theo thang điểm bao nhiêu
+    - đánh giá điểm học phần theo thang điểm mấy
+    - đánh giá điểm học phần theo thang điểm bao nhiêu
+    - cách tính điểm học phần
+    - làm sao để tính điểm học phần
+    - điểm học phần
+    - tính điểm học phần
+    - điểm học phần tính như nào
+    - điểm học phần tính như thế nào
+
+- intent: diem_A
+  examples: |
+    - để đạt được điểm A thì sinh viên phải đạt được điểm bao nhiêu
+    - điểm A là điểm gì
+    - cần đạt bao nhiêu điểm để đạt được điểm A
+    - bao nhiêu điểm sẽ đạt được điểm A
+    - điểm A nằm ở mức nào
+    - để đạt được điểm A sinh viên phải nhận được điểm đánh giá học phần là bao nhiêu
+    - đạt điểm A như thế nào
+    - làm sao để đạt điểm A
+
+- intent: diem_B_plus
+  examples: |
+    - để đạt được điểm B+ thì sinh viên phải đạt được điểm bao nhiêu
+    - điểm B+ là điểm gì
+    - cần đạt bao nhiêu điểm để đạt được điểm B+
+    - bao nhiêu điểm sẽ đạt được điểm B+
+    - điểm B+ nằm ở mức nào
+    - để đạt được điểm B+ sinh viên phải nhận được điểm đánh giá học phần là bao nhiêu
+    - đạt điểm B+ như thế nào
+    - làm sao để đạt điểm mức giỏi 
+
+- intent: diem_B
+  examples: |
+    - để đạt được điểm B thì sinh viên phải đạt được điểm bao nhiêu
+    - điểm B là điểm gì
+    - cần đạt bao nhiêu điểm để đạt được điểm B
+    - bao nhiêu điểm sẽ đạt được điểm B
+    - điểm B nằm ở mức nào
+    - để đạt được điểm B sinh viên phải nhận được điểm đánh giá học phần là bao nhiêu
+    - đạt điểm B như thế nào
+
+- intent: diem_C_plus
+  examples: |
+    - đạt điểm bao nhiêu sẽ nhận điểm C+
+    - sinh viên đạt điểm bao nhiêu sẽ nhận điểm C+
+    - đạt điểm C+ như thế nào
+    - điểm C+ ở mức nào
+    - điểm C+ nằm ở mức bao nhiêu
+    - điểm C+ nằm ở thang điểm bao nhiêu
+    - C+ ở mức điểm mấy
+    - mức điểm của C+
+    - mức điểm của điểm C+
+    - nhận điểm C+ như thế nào
+    - điểm số bao nhiêu sẽ nhận điểm C+
+
+- intent: diem_C
+  examples: |
+    - đạt điểm bao nhiêu sẽ nhận điểm C
+    - sinh viên đạt điểm bao nhiêu sẽ nhận điểm C
+    - đạt điểm C như thế nào
+    - điểm C ở mức nào
+    - điểm C nằm ở mức bao nhiêu
+    - điểm C nằm ở thang điểm bao nhiêu
+    - C ở mức điểm mấy
+    - mức điểm của C
+    - mức điểm của điểm C
+    - nhận điểm C như thế nào
+    - điểm số bao nhiêu sẽ nhận điểm C
+
+- intent: diem_D_plus
+  examples: |
+    - điểm bao nhiêu sẽ nhận điểm D+
+    - sinh viên đạt điểm bao nhiêu sẽ nhận điểm D+
+    - bị điểm D+ như thế nào
+    - điểm D+ ở mức nào
+    - điểm D+ nằm ở mức bao nhiêu
+    - điểm D+ nằm ở thang điểm bao nhiêu
+    - D+ ở mức điểm mấy
+    - mức điểm của D+
+    - mức điểm của điểm D+
+    - nhận điểm D+ như thế nào
+    - điểm số bao nhiêu sẽ nhận điểm D+
+
+- intent: diem_D
+  examples: |
+    - điểm bao nhiêu sẽ bị nhận điểm D
+    - sinh viên đạt điểm bao nhiêu sẽ nhận điểm D
+    - bị điểm D như thế nào
+    - điểm D ở mức nào
+    - điểm D nằm ở mức bao nhiêu
+    - điểm D nằm ở thang điểm bao nhiêu
+    - D ở mức điểm mấy
+    - mức điểm của D
+    - mức điểm của điểm D
+    - nhận điểm D như thế nào
+    - điểm số bao nhiêu sẽ nhận điểm D
+
+- intent: diem_F
+  examples: |
+    - điểm bao nhiêu sẽ bị nhận điểm F
+    - sinh viên đạt điểm bao nhiêu sẽ nhận điểm F
+    - bị điểm F như thế nào
+    - điểm F ở mức nào
+    - điểm F nằm ở mức bao nhiêu
+    - điểm F nằm ở thang điểm bao nhiêu
+    - F ở mức điểm mấy
+    - mức điểm của F
+    - mức điểm của điểm F
+    - nhận điểm F như thế nào
+    - điểm số bao nhiêu sẽ nhận điểm F
+
+- intent: hoc_phan_duoc_tich_luy
+  examples: |
+    - học phần nào sẽ được tính tích lũy
+    - những học phần được tính tích lũy
+    - học phần nào được tích lũy
+    - học phần được tích lũy
+    - sinh viên phải đạt điểm bao nhiêu mới được tích lũy
+    - sinh viên đạt điểm bao nhiêu mới được tích lũy
+    - điểm nào mới được tích lũy
+    - điêm bao nhiêu mới được tính tích lũy
+    - điểm nào thì được tính tích lũy
+    - điêm bao nhiêu thì được tính tích lũy
+    - bao nhiêu điểm thì được tính tích lũy
+    - bao nhiêu điểm thì được tích lũy
+    - điểm số bao nhiêu thì tính tích lũy
+    - điểm số bao nhiêu thì tích lũy  
+
+- intent: diem_hoc_phan_khac
+  examples: |
+    - ngoài loại điểm A, B, C, D, F thì còn điểm nào nữa
+    - các loại điểm khác
+    - các loại điểm đặc biệt
+    - các loại điểm học phần khác
+    - còn loại điểm khác không
+    - còn các loại điểm học phần khác không
+    - có còn điểm học phần nào nữa không
+    - điểm học phần ngoài A, B, C, D, F còn điểm khác không
+
+- intent: diem_M
+  examples: |
+    - điểm M là điểm gì
+    - thế nào là điểm M
+    - điểm M là điểm như thế nào
+    - điểm M được tính như thế nào
+    - điểm M được tích lũy như thế nào
+    - đạt điểm M như thế nào
+    - sinh viên đạt điểm M như thế nào
+    - làm sao để có điểm M
+    - điểm M là loại điểm gì
+    - đánh giá điểm M như thế nào
+
+- intent: diem_I
+  examples: |
+    - điểm I là điểm gì
+    - thế nào là điểm I
+    - điểm I là điểm như thế nào
+    - điểm I được tính như thế nào
+    - điểm I được tích lũy như thế nào
+    - đạt điểm I như thế nào
+    - sinh viên đạt điểm I như thế nào
+    - làm sao để có điểm I
+    - điểm I là loại điểm gì
+    - đánh giá điểm I như thế nào
+
+- intent: diem_W
+  examples: |
+    - điểm W là điểm gì
+    - thế nào là điểm W
+    - điểm W là điểm như thế nào
+    - điểm W được tính như thế nào
+    - điểm W được tích lũy như thế nào
+    - đạt điểm W như thế nào
+    - sinh viên đạt điểm W như thế nào
+    - làm sao để có điểm W
+    - điểm W là loại điểm gì
+    - đánh giá điểm W như thế nào
+
+- intent: thi_ket_thuc_hoc_phan
+  examples: |
+    - thi kết thúc học phần
+    - sinh viên được thi bao nhiêu lần
+    - số lần thi kết thúc học phần
+    - sinh viên được thi bao nhiêu lần kết thúc học phần
+    - sinh viên trải qua bao nhiêu lần thì kết thúc học phần
+    - thi kết thúc học phần bao nhiêu lần
+    - tổng số lần thi kết thúc học phần
+    - được thi kết thúc học phần bao nhiêu lần
+    - thời gian thi kết thúc học phần diễn ra khi nào
+    - khi nào thì thi kết thúc học phần
+    - thời gian diễn ra kỳ thi kết thúc học phần
+    - sinh viên thi học kỳ khi nào
+    - khi nào thì sinh viên thi học kỳ
+    - thời gian thi học kỳ của sinh viên
+    - thời gian thi kết thúc học kỳ
+    - thi kết thúc học phần khi nào
+    - khi nào thì kết thúc học phần
+
+- intent: vang_thi
+  examples: |
+    - vắng trong kỳ thi học phần
+    - vắng mặt trong khi thi học phần
+    - nếu sinh viên vắng trong kỳ thi học phần
+    - sinh viên vắng mặt trong thi kết thúc học phần
+    - vắng thi có lý do chính đáng
+    - có được vắng thi không
+    - vắng thi học kỳ
+    - có thể vắng thi học kỳ không
+    - vắng mặt trong kỳ thi học phần
+
+- intent: tin_chi_tich_luy
+  examples: |
+    - số tín chỉ tích lũy là gì
+    - số tín chỉ tích lũy
+    - thế nào là số tín chỉ tích lũy
+    - tín chỉ tích lũy là gì
+    - tín chỉ tích lũy
+
+- intent: DTB_hoc_ky
+  examples: |
+    - điểm trung bình chung học kỳ
+    - điểm trung bình chung học kỳ là gì
+    - giới thiệu về điểm trung bình chung học kỳ
+    - ĐTBHK
+    - DTBHK
+    - ĐTBCHK
+
+- intent: DTB_nam_hoc
+  examples: |
+    - điểm trung bình chung năm học
+    - điểm trung bình chung năm học là gì
+    - giới thiệu về điểm trung bình chung năm học
+    - ĐTBNH
+    - DTBNH
+    - điểm trung bình năm học 
+    - điểm trung bình năm học là gì
+    - giới thiệu điểm trung bình năm học
+    - ĐTBCNH
+
+- intent: DTB_tich_luy
+  examples: |
+    - điểm trung bình chung tích lũy
+    - điểm trung bình chung tích lũy là gì
+    - giới thiệu về điểm trung bình tích lũy
+    - ĐTBTL
+    - DTBTL
+    - điểm trung bình tích lũy
+    - điểm trung bình tích lũy là gì
+    - giới thiệu điểm trung bình tích lũy
+    - ĐTBCTL
+    - dtbtl
+
+- intent: xep_loai
+  examples: |
+    - xếp loại học tập như thế nào
+    - xếp loại học tập được đánh giá như thế nào
+    - loại học tập được xếp như thế nào
+    - loại học tập được đánh giá như thế nào
+    - đánh giá xếp loại học tập như thế nào
+    - có bao nhiêu loại kết quả học tập
+    - xếp loại học tập
+    - cách xếp loại học tập
+    - đánh giá xếp loại học tập
+    - đánh giá xếp loại
+    - loại khá
+    - loại xuất sắc
+    - loại trung bình
+    - loại kém
+
+- intent: diem_ren_luyen
+  examples: |
+    - điểm rèn luyện đánh giá như thế nào
+    - cách đánh giá điểm rèn luyện của sinh viên
+    - đánh giá điểm rèn luyện như thế nào
+    - cách đánh giá điểm rèn luyện của sinh viên
+    - điểm rèn luyện
+    - điểm rèn luyện là gì
+    - đrl
+    - ĐRL
+    - đrl là gì
+    - đánh giá đrl
+    - drl
+
+- intent: khen_thuong
+  examples: |
+    - quy định về khen thưởng và xếp loại 
+    - cho thông tin về quy định khen thưởng và xếp loại
+    - thông tin về khen thưởng và xếp loại
+    - khen thưởng và xếp loại
+    - khen thưởng loại xuất sắc
+    - khen thưởng loại giỏi
+    - khen thưởng loại khá
+    - cách để được khen thưởng 
+    - khen thưởng
+    - học tập và rèn luyện loại nào để được loại xuất sắc
+    - học tập và rèn luyện loại nào để được loại giỏi
+    - học tập và rèn luyện loại nào để được loại khá
+
+- intent: quy_dinh_thi_ktra
+  examples: |
+    - quy định dự thi của sinh viên
+    - có những quy định nào về kỳ thi
+    - quy định của kỳ thi
+    - thi có cần mang thẻ sinh viên không
+    - quy định thi và kiểm tra như thế nào
+    - quy định kiểm tra
+    - quy định kiểm tra như thế nào
+    - quy định khi thi và kiểm tra
+
+- intent: xu_ly_vi_pham
+  examples: |
+    - các hình thức xử lý vi phạm qui định về thi và kiểm tra
+    - hình thức xử lý sinh viên vi phạm thi kiểm tra
+    - sinh viên bị xử lý như thế nào nếu vi phạm quy định trong thi kiểm tra  
+    - xử lý vi phạm trong thi và kiểm tra
+    - có bao nhiêu loại xử lý vi phạm trong thi và kiểm tra
+    - sinh viên sẽ bị xử lý như thế nào nếu vi phạm quy định trong kiểm tra
+
+- intent: khien_trach
+  examples: |
+    - vi phạm như thế nào bị khiển trách trong kỳ thi kiểm tra
+    - sinh viên bị xử lý khiển trách trong kỳ thi kiểm tra nếu phạm lỗi gì
+    - sinh viên phạm lỗi gì thì bị khiển trách trong thi kiểm tra
+    - vi phạm lỗi gì bị khiển trách
+    - vi phạm lỗi gì bị khiển trách trong lúc kiểm tra thi
+    - lỗi bị khiển trách trong lúc kiểm tra
+    - vi phạm mức độ khiển trách
+  
+- intent: canh_cao
+  examples: |
+    - vi phạm như thế nào bi cảnh cáo trong kỳ thi kiểm tra
+    - sinh viên bị xử lý cảnh cáo trong kỳ thi kiểm tra nếu phạm lỗi gì
+    - sinh viên phạm lỗi gì thì bị cảnh cáo trong thi kiểm tra
+    - vi phạm lỗi gì bị cảnh cáo
+    - vi phạm lỗi gì bị cảnh cáo trong lúc kiểm tra thi
+    - lỗi bị cảnh cáo trong lúc kiểm tra
+    - vi phạm mức độ cảnh cáo
+
+- intent: dinh_chi
+  examples: |
+    - vi phạm như thế nào bị đình chỉ trong kỳ thi kiểm tra
+    - sinh viên bị xử lý đình chỉ trong kỳ thi kiểm tra nếu phạm lỗi gì
+    - sinh viên phạm lỗi gì thì bị đình chỉ trong thi kiểm tra
+    - vi phạm lỗi gì bị đình chỉ
+    - vi phạm lỗi gì bị đình chỉ trong lúc kiểm tra thi
+    - lỗi bị đình chỉ trong lúc kiểm tra
+    - vi phạm mức độ đình chỉ
+
+- intent: thi_ho
+  examples: |
+    - xử lý thi hộ
+    - xử lý đối với người thi hộ
+    - xử lý đối với trường hợp thi hộ
+    - cách xử lý trường hợp thi hộ
+    - trường hợp thi hộ
+    - vi phạm thi hộ
+    - rắc rối nếu thi hộ
+    - thi hộ
+    - có được phép thi hộ không
+    - thi hộ bị xử lý như thế nào
+    - người thi hộ có bị xử lý không
+
+
+
+

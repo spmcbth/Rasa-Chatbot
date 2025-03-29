@@ -1,0 +1,439 @@
+version: "3.1"
+
+stories:
+
+- story: greet
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: thank
+  steps:
+    - intent: thank
+    - action: utter_thank
+
+- story: help
+  steps:
+    - intent: help
+    - action: utter_reply_help
+
+- story: bot_challenge
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- story: fallback
+  steps: 
+    - intent: nlu_fallback
+    - action: utter_fallback
+
+- story: quy_dinh
+  steps:
+    - intent: quy_dinh
+    - action: utter_quy_dinh
+
+- story: doi_tuong_ap_dung
+  steps:
+    - intent: doi_tuong_ap_dung
+    - action: utter_doi_tuong_ap_dung
+
+- story: sv_chinh_quy
+  steps:
+    - intent: sv_chinh_quy
+    - action: utter_sv_chinh_quy
+
+- story: quy_dinh_dong_phuc
+  steps: 
+    - intent: quy_dinh_dong_phuc
+    - action: utter_quy_dinh_dong_phuc
+
+- story: quy_dinh_sv
+  steps:
+    - intent: quy_dinh_sv
+    - action: utter_quy_dinh_sv
+
+- story: chuong_trinh_dao_tao
+  steps:
+    - intent: chuong_trinh_dao_tao
+    - action: utter_chuong_trinh_dao_tao
+
+- story: xet_tot_nghiep
+  steps:
+    - intent: xet_tot_nghiep
+    - action: utter_xet_tot_nghiep
+
+- story: tgian_dao_tao
+  steps:
+    - intent: tgian_dao_tao
+    - action: utter_tgian_dao_tao
+
+- story: quy_dinh_hoc_ky
+  steps: 
+    - intent: quy_dinh_hoc_ky
+    - action: utter_quy_dinh_hoc_ky
+    - intent: hoc_ky
+    - action: utter_hoc_ky
+
+- story: hoc_ky
+  steps: 
+    - intent: hoc_ky
+    - action: utter_hoc_ky
+    - intent: hoc_ky_phu
+    - action: utter_hoc_ky_phu
+
+- story: hoc_ky_phu
+  steps: 
+    - intent: hoc_ky_phu
+    - action: utter_hoc_ky_phu
+
+- story: hoc_phan
+  steps:
+    - intent: hoc_phan
+    - action: utter_hoc_phan
+
+- story: hoc_phan_bat_buoc
+  steps:
+    - intent: hoc_phan_bat_buoc
+    - action: utter_hoc_phan_bat_buoc
+
+- story: hoc_phan_tu_chon
+  steps:
+    - intent: hoc_phan_tu_chon
+    - action: utter_hoc_phan_tu_chon
+
+- story: hoc_phan_tien_quyet
+  steps:
+    - intent: hoc_phan_tien_quyet
+    - action: utter_hoc_phan_tien_quyet
+
+- story: hoc_phan_song_hanh
+  steps:
+    - intent: hoc_phan_song_hanh
+    - action: utter_hoc_phan_song_hanh
+
+- story: hoc_phan_dieu_kien
+  steps:
+    - intent: hoc_phan_dieu_kien
+    - action: utter_hoc_phan_dieu_kien
+
+- story: lop_hoc_phan
+  steps:
+    - intent: lop_hoc_phan
+    - action: utter_lop_hoc_phan
+
+- story: lop_chuyen_nganh
+  steps:
+    - intent: lop_chuyen_nganh
+    - action: utter_lop_chuyen_nganh
+
+- story: tin_chi
+  steps:
+    - intent: tin_chi
+    - action: utter_tin_chi
+
+- story: thoi_luong_tin_chi
+  steps:
+    - intent: thoi_luong_tin_chi
+    - action: utter_thoi_luong_tin_chi
+
+- story: tiet_hoc
+  steps:
+    - intent: tiet_hoc
+    - action: utter_tiet_hoc
+
+- story: tin_chi_hoc_4_nam
+  steps:
+    - intent: tin_chi_hoc_4_nam
+    - action: utter_tin_chi_hoc_4_nam
+
+- story: tin_chi_hoc_4_5_nam
+  steps:
+    - intent: tin_chi_hoc_4_5_nam
+    - action: utter_tin_chi_hoc_4_5_nam
+
+- story: tin_chi_hoc_5_nam
+  steps:
+    - intent: tin_chi_hoc_5_nam
+    - action: utter_tin_chi_hoc_5_nam
+
+- story: xet_hoc_bong
+  steps:
+    - intent: xet_hoc_bong
+    - action: utter_xet_hoc_bong
+
+- story: muc_hoc_bong
+  steps:
+    - intent: muc_hoc_bong
+    - action: utter_muc_hoc_bong
+
+- story: quy_dinh_muc_hoc_bong
+  steps:
+    - intent: quy_dinh_muc_hoc_bong
+    - action: utter_quy_dinh_muc_hoc_bong
+
+- story: tro_cap_xa_hoi
+  steps:
+    - intent: tro_cap_xa_hoi
+    - action: utter_tro_cap_xa_hoi
+
+- story: hoc_phi
+  steps:
+    - intent: hoc_phi
+    - action: utter_hoc_phi
+
+- story: tre_hoc_phi
+  steps:
+    - intent: tre_hoc_phi
+    - action: utter_tre_hoc_phi
+
+- story: tin_dung_sv
+  steps:
+    - intent: tin_dung_sv
+    - action: utter_tin_dung_sv
+
+- story: chuyen_truong
+  steps:
+    - intent: chuyen_truong
+    - action: utter_chuyen_truong
+
+- story: thuc_tap_thuc_te
+  steps:
+    - intent: thuc_tap_thuc_te
+    - action: utter_thuc_tap_thuc_te
+
+- story: tgian_thuc_tap
+  steps:
+    - intent: tgian_thuc_tap
+    - action: utter_tgian_thuc_tap
+
+- story: dieu_kien_thuc_tap
+  steps:
+    - intent: dieu_kien_thuc_tap
+    - action: utter_dieu_kien_thuc_tap
+
+- story: sau_thuc_tap
+  steps:
+    - intent: sau_thuc_tap
+    - action: utter_sau_thuc_tap
+
+- story: luan_van_tot_nghiep
+  steps:
+    - intent: luan_van_tot_nghiep
+    - action: utter_luan_van_tot_nghiep
+
+- story: tin_chi_luan_van
+  steps:
+    - intent: tin_chi_luan_van
+    - action: utter_tin_chi_luan_van
+
+- story: tieu_luan_tot_nghiep
+  steps:
+    - intent: tieu_luan_tot_nghiep
+    - action: utter_tieu_luan_tot_nghiep
+
+- story: tin_chi_tieu_luan
+  steps:
+    - intent: tin_chi_tieu_luan
+    - action: utter_tin_chi_tieu_luan
+
+- story: tich_luy_TC_tot_nghiep
+  steps:
+    - intent: tich_luy_TC_tot_nghiep
+    - action: utter_tich_luy_TC_tot_nghiep
+
+- story: nhan_de_tai
+  steps:
+    - intent: nhan_de_tai
+    - action: utter_nhan_de_tai
+
+- story: dang_ky_LV_TL
+  steps:
+    - intent: dang_ky_LV_TL
+    - action: utter_dang_ky_LV_TL
+
+- story: diem_kem_LV_TL
+  steps:
+    - intent: diem_kem_LV_TL
+    - action: utter_diem_kem_LV_TL
+
+- story: tgian_xet_tot_nghiep
+  steps:
+    - intent: tgian_xet_tot_nghiep
+    - action: utter_tgian_xet_tot_nghiep
+
+- story: dky_xet_tot_nghiep
+  steps:
+    - intent: dky_xet_tot_nghiep
+    - action: utter_dky_xet_tot_nghiep
+
+- story: hoi_dong_xet_tot_nghiep
+  steps:
+    - intent: hoi_dong_xet_tot_nghiep
+    - action: utter_hoi_dong_xet_tot_nghiep
+
+- story: cong_nhan_tot_nghiep
+  steps:
+    - intent: cong_nhan_tot_nghiep
+    - action: utter_cong_nhan_tot_nghiep
+
+- story: danh_gia_hoc_phan
+  steps:
+    - intent: danh_gia_hoc_phan
+    - action: utter_danh_gia_hoc_phan
+
+- story: hoc_phan_thuc_hanh
+  steps:
+    - intent: hoc_phan_thuc_hanh
+    - action: utter_hoc_phan_thuc_hanh
+
+- story: diem_hoc_phan
+  steps:
+    - intent: diem_hoc_phan
+    - action: utter_diem_hoc_phan
+
+- story: diem_A
+  steps:
+    - intent: diem_A
+    - action: utter_diem_A
+
+- story: diem_B_plus
+  steps:
+    - intent: diem_B_plus
+    - action: utter_diem_B_plus
+
+- story: diem_B
+  steps:
+    - intent: diem_B
+    - action: utter_diem_B
+
+- story: diem_C_plus 
+  steps:
+    - intent: diem_C_plus 
+    - action: utter_diem_C_plus 
+
+- story: diem_C
+  steps:
+    - intent: diem_C
+    - action: utter_diem_C
+
+- story: diem_D_plus 
+  steps:
+    - intent: diem_D_plus 
+    - action: utter_diem_D_plus 
+
+- story: diem_D
+  steps:
+    - intent: diem_D
+    - action: utter_diem_D
+
+- story: diem_F
+  steps:
+    - intent: diem_F
+    - action: utter_diem_F
+
+- story: hoc_phan_duoc_tich_luy
+  steps: 
+    - intent: hoc_phan_duoc_tich_luy
+    - action: utter_hoc_phan_duoc_tich_luy
+
+- story: diem_hoc_phan_khac
+  steps:
+    - intent: diem_hoc_phan_khac
+    - action: utter_diem_hoc_phan_khac
+
+- story: diem_M
+  steps:
+   - intent: diem_M
+   - action: utter_diem_M
+
+- story: diem_I
+  steps:
+   - intent: diem_I
+   - action: utter_diem_I
+
+- story: diem_W
+  steps:
+   - intent: diem_W
+   - action: utter_diem_W
+
+- story: thi_ket_thuc_hoc_phan
+  steps: 
+    - intent: thi_ket_thuc_hoc_phan
+    - action: utter_thi_ket_thuc_hoc_phan
+    - intent: vang_thi
+    - action: utter_vang_thi
+
+- story: vang_thi
+  steps:
+    - intent: vang_thi
+    - action: utter_vang_thi
+
+- story: tin_chi_tich_luy
+  steps: 
+    - intent: tin_chi_tich_luy
+    - action: utter_tin_chi_tich_luy
+
+- story: DTB_hoc_ky
+  steps:
+    - intent: DTB_hoc_ky
+    - action: utter_DTB_hoc_ky
+    
+- story: DTB_nam_hoc
+  steps:
+    - intent: DTB_nam_hoc
+    - action: utter_DTB_nam_hoc
+
+- story: DTB_tich_luy
+  steps:
+    - intent: DTB_tich_luy
+    - action: utter_DTB_tich_luy
+
+- story: xep_loai
+  steps:
+    - intent: xep_loai
+    - action: utter_xep_loai
+
+- story: diem_ren_luyen
+  steps:
+    - intent: diem_ren_luyen
+    - action: utter_diem_ren_luyen
+
+- story: khen_thuong
+  steps:
+    - intent: khen_thuong
+    - action: utter_khen_thuong
+
+- story: quy_dinh_thi_ktra
+  steps:
+    - intent: quy_dinh_thi_ktra
+    - action: utter_quy_dinh_thi_ktra
+
+- story: xu_ly_vi_pham
+  steps:
+    - intent: xu_ly_vi_pham
+    - action: utter_xu_ly_vi_pham
+
+- story: khien_trach
+  steps:
+    - intent: khien_trach
+    - action: utter_khien_trach
+
+- story: canh_cao
+  steps:
+    - intent: canh_cao
+    - action: utter_canh_cao
+
+- story: dinh_chi
+  steps:
+    - intent: dinh_chi
+    - action: utter_dinh_chi
+
+- story: thi_ho
+  steps:
+    - intent: thi_ho
+    - action: utter_thi_ho

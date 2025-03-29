@@ -1,0 +1,38 @@
+recipe: default.v1
+version: "3.1"
+
+language: vi
+
+pipeline:
+- name: custom_components.vietnamese_tokenizer.VietnameseTokenizer
+- name: RegexFeaturizer  # Nhận diện mẫu regex (VD: số điện thoại, email)
+- name: LexicalSyntacticFeaturizer  # Trích xuất đặc trưng từ ngữ pháp và cú pháp
+- name: CountVectorsFeaturizer  # Biến văn bản thành vector số học
+- name: CountVectorsFeaturizer  
+  analyzer: char_wb    
+  min_ngram: 1
+  max_ngram: 4
+- name: DIETClassifier  # Mô hình học sâu phân loại ý định và thực thể
+  epochs: 100
+  constrain_similarities: true  # Hạn chế sự giống nhau giữa các intent
+  embedding_dimension: 20
+- name: EntitySynonymMapper  # Ánh xạ đồng nghĩa cho thực thể (VD: "SV" = "sinh viên")
+- name: FallbackClassifier  # Xử lý fallback
+  threshold: 0.4  # Giảm ngưỡng để giảm tỷ lệ fallback không cần thiết
+  ambiguity_threshold: 0.1  # Giúp xử lý câu hỏi mơ hồ
+
+policies:
+- name: MemoizationPolicy  # Ghi nhớ hội thoại
+- name: TEDPolicy  # Mô hình học sâu dự đoán hành động tiếp theo
+  max_history: 3  # Tăng khả năng ghi nhớ hội thoại trước đó
+  epochs: 100 # Giảm để tăng tốc train
+  constrain_similarities: true
+- name: RulePolicy  # Chính sách dựa trên quy tắc
+  core_fallback_threshold: 0.4
+  core_fallback_action_name: "utter_fallback"
+  enable_fallback_prediction: true
+- name: UnexpecTEDIntentPolicy  # Xử lý intent bất ngờ
+  max_history: 5
+  epochs: 100
+
+assistant_id: 20250304-125924-level-ricotta
