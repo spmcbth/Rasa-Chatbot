@@ -3,19 +3,31 @@
 # Server where the models are pulled from.
 # https://rasa.com/docs/rasa/model-storage#fetching-models-from-a-server
 
-#models:
+# models:
 #  url: http://my-server.com/models/default_core@latest
 #  wait_time_between_pulls:  10   # [optional](default: 100)
 
 # Server which runs your custom actions.
 # https://rasa.com/docs/rasa/custom-actions
 
-#action_endpoint:
-#  url: "http://localhost:5055/webhook"
+action_endpoint:
+  url: "http://localhost:5055/webhook"
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
 # https://rasa.com/docs/rasa/tracker-stores
+
+tracker_store:
+  type: SQL
+  dialect: "mysql+pymysql"  # the dialect used to interact with the db
+  url: "localhost"  # (optional) host of the sql db, e.g. "localhost"
+  db: "rasa_tracker"  # path to your db
+  username: "rasa_user"  # username used for authentication
+  password: "4510471"  # password used for authentication
+
+# tracker_store:
+#   type: custom_components.custom_tracker_store.MySQLTrackerStore
+#   url: "mysql+pymysql://rasa_user:4510471@localhost:3306/rasa_tracker"
 
 #tracker_store:
 #    type: redis
@@ -35,8 +47,10 @@
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/event-brokers
 
-#event_broker:
-#  url: localhost
-#  username: username
-#  password: password
-#  queue: queue
+# event_broker:
+#   type: SQL
+#   dialect: "mysql+pymysql"  # the dialect used to interact with the db
+#   url: "localhost"  # (optional) host of the sql db, e.g. "localhost"
+#   db: "rasa_tracker"  # path to your db
+#   username: "rasa_user"  # username used for authentication
+#   password: "4510471"
