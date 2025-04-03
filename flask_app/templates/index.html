@@ -6,21 +6,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            <span>Rasa Chatbot</span>
-            <button id="new-chat-button" class="new-chat-btn">New Chat</button>
+            <div class="header-title">
+                <span>Chatbot Assistant</span>
+            </div>
+            <button id="new-chat-button" class="new-chat-btn">
+                <i class="fas fa-plus"></i> New Chat
+            </button>
         </div>
         <div class="chat-messages" id="chat-messages">
             <div class="message">
-                <div class="bot-message">Xin chào! Mình là chatbot hỗ trợ giải đáp quy chế học vụ. Bạn cần giúp gì?</div>
+                <div class="bot-message-container">
+                    <img class="bot-icon" src="../static/images/chatbot.png" alt="Chatbot" class="bot-icon-img">
+                    <div class="bot-message">Xin chào! Mình là chatbot hỗ trợ giải đáp quy chế học vụ. Bạn cần giúp gì?</div>
+                </div>
             </div>
         </div>
         <div class="chat-input-container">
             <input type="text" id="user-input" placeholder="Nhập tin nhắn của bạn..." autocomplete="off">
-            <button id="send-button">Gửi</button>
+            <button id="send-button">
+                <i class="fas fa-paper-plane"></i>
+            </button>
         </div>
     </div>
 
