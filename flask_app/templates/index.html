@@ -21,14 +21,24 @@
         <div class="chat-messages" id="chat-messages">
             <div class="message">
                 <div class="bot-message-container">
-                    <img class="bot-icon" src="../static/images/chatbot.png" alt="Chatbot" class="bot-icon-img">
-                    <div class="bot-message">Xin chào! Mình là chatbot hỗ trợ giải đáp quy chế học vụ. Bạn cần giúp gì?</div>
+                    <div class="bot-icon">
+                        <img src="../static/images/chatbot.png" alt="Chatbot" class="bot-icon-img">
+                    </div>
+                    <div class="bot-message-wrapper">
+                        <div class="bot-message">Xin chào! Mình là chatbot hỗ trợ giải đáp quy chế học vụ. Bạn cần giúp gì?</div>
+                        <button class="like-message-btn bot-like-btn" title="Thêm vào yêu thích">
+                            <i class="far fa-heart"></i> 
+                        </button>                        
+                    </div>
                 </div>
             </div>
         </div>
         <div class="chat-input-container">
             <input type="text" id="user-input" placeholder="Nhập tin nhắn của bạn..." autocomplete="off">
-            <button id="send-button">
+            <button id="fav-messages" title="Tin nhắn yêu thích">
+                <i class="fas fa-heart"></i>
+            </button>
+            <button id="send-button" title="Gửi tin nhắn">
                 <i class="fas fa-paper-plane"></i>
             </button>
         </div>
