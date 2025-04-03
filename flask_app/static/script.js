@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     favoritesPanel.id = "favorites-panel";
     favoritesPanel.innerHTML = `
         <div class="favorites-header">
-            <h3>Đoạn hội thoại yêu thích</h3>
+            <h3>Yêu thích</h3>
             <button id="close-favorites" class="close-btn"><i class="fas fa-times"></i></button>
         </div>
         <div class="favorites-list" id="favorites-list"></div>
@@ -78,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.target && e.target.closest(".delete-favorite")) {
             e.preventDefault();
             
-            // Nếu đang xử lý, bỏ qua click
             if (isProcessingAction) return;
             isProcessingAction = true;
             
@@ -251,7 +250,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const favorites = getFavoritesFromStorage();
         const timestamp = messageContainer.getAttribute("data-timestamp") || new Date().toLocaleString();
         const messageId = messageContainer.getAttribute("data-message-id") || "msg_" + Date.now();
-        
+        const likeButton = messageContainer.querySelector('.like-message-btn');
+
         // Kiểm tra xem tin nhắn đã được yêu thích chưa
         const existingIndex = favorites.findIndex(fav => fav.messageId === messageId);
         if (existingIndex !== -1) {
@@ -260,13 +260,14 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("chat_favorites", JSON.stringify(favorites));
             updateFavoritesList();
             showNotification("Đã bỏ yêu thích!");
+            likeButton.classList.remove('active');
             return;
         }
         
-        // Tạo ID duy nhất cho mục yêu thích
+        // Tạo ID cho mục yêu thích
         const favoriteId = "fav_" + Date.now();
         
-        // Tạo đối tượng yêu thích mới
+        // Tạo yêu thích mới
         const favorite = {
             id: favoriteId,
             messageId: messageId,
@@ -275,17 +276,16 @@ document.addEventListener("DOMContentLoaded", function () {
             date: new Date().toLocaleString()
         };
         
-        // Thêm vào mảng yêu thích
         favorites.push(favorite);
         
         // Lưu lại vào LocalStorage
         localStorage.setItem("chat_favorites", JSON.stringify(favorites));
         
-        // Cập nhật giao diện yêu thích
         updateFavoritesList();
         
-        // Hiển thị thông báo
         showNotification("Đã thêm vào yêu thích!");
+
+        likeButton.classList.add('active'); // Active nút yêu thích
     }
 
     // Lấy danh sách yêu thích từ localStorage
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
         
-        // Sắp xếp theo thời gian - mới nhất lên đầu
+        // Sắp xếp lưu trữ theo thời gian
         favorites.sort((a, b) => new Date(b.date) - new Date(a.date));
         
         favorites.forEach(favorite => {
