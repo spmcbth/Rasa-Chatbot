@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Rasa Chatbot</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/chatbot.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/style.css">
@@ -9,11 +10,12 @@
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            Rasa Chatbot
+            <span>Rasa Chatbot</span>
+            <button id="new-chat-button" class="new-chat-btn">New Chat</button>
         </div>
         <div class="chat-messages" id="chat-messages">
             <div class="message">
-                <div class="bot-message">Xin chào! Tôi là chatbot được tạo bằng Rasa và Flask. Bạn cần giúp gì?</div>
+                <div class="bot-message">Xin chào! Mình là chatbot hỗ trợ giải đáp quy chế học vụ. Bạn cần giúp gì?</div>
             </div>
         </div>
         <div class="chat-input-container">

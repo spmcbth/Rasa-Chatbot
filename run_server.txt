@@ -1,1 +1,5 @@
+cd Rasa
 rasa run --enable-api --cors "*"
+
+cd flask_app
+python app.py

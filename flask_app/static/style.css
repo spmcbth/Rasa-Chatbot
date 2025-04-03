@@ -16,11 +16,27 @@ body {
 }
 
 .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #4CAF50;
     color: white;
     padding: 15px;
-    text-align: center;
     font-size: 18px;
+}
+
+.new-chat-btn {
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.new-chat-btn:hover {
+    background-color: #2e7d32;
 }
 
 .chat-messages {

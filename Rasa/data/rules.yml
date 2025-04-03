@@ -16,7 +16,3 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: utter_fallback
-
-- rule: save_message
-  steps:
-    - action: action_save_message
