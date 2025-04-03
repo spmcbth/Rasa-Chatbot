@@ -11,6 +11,3 @@ Rasa/.rasa/cache/
 
 test_token.py
 models/
-.env
-credentials.yml
-database.sql
