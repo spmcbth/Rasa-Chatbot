@@ -9,7 +9,7 @@ from datetime import datetime
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static', static_folder='static')
 CORS(app)
 
 # Đường dẫn API của Rasa server
@@ -29,7 +29,7 @@ def init_db():
         conn = mysql.connector.connect(**MYSQL_CONFIG)
         cursor = conn.cursor()
         
-        # Tạo bảng lưu lịch sử chat nếu chưa tồn tại với conversation_id
+        # Bảng chat_history
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS chat_history (
                 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -38,6 +38,19 @@ def init_db():
                 user_message TEXT,
                 bot_response TEXT,
                 timestamp DATETIME
+            )
+        ''')
+        
+        # Bảng yêu thích
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS favorites (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                user_id VARCHAR(100),
+                message_id VARCHAR(100) UNIQUE,
+                conversation_id VARCHAR(100),
+                content TEXT,
+                message_type ENUM('user', 'bot'),
+                created_at DATETIME
             )
         ''')
         
@@ -54,7 +67,7 @@ def save_chat_history(user_id, conversation_id, user_message, bot_response):
         conn = mysql.connector.connect(**MYSQL_CONFIG)
         cursor = conn.cursor()
         
-        # Lưu thông tin chat
+        # Thêm lịch sử chat vào bảng
         query = '''
             INSERT INTO chat_history (user_id, conversation_id, user_message, bot_response, timestamp)
             VALUES (%s, %s, %s, %s, %s)
@@ -73,8 +86,10 @@ def save_chat_history(user_id, conversation_id, user_message, bot_response):
 def index():
     return render_template('index.html')
 
+# Chat messages
 @app.route('/chat', methods=['POST'])
 def chat():
+    """API endpoint xử lý tin nhắn từ user và nhận phản hồi từ chatbot Rasa"""
     try:
         user_message = request.json.get('message', '')
         user_id = request.json.get('user_id', 'anonymous')
@@ -133,7 +148,7 @@ def chat():
 
 @app.route('/history', methods=['GET'])
 def get_history():
-    """API endpoint để lấy lịch sử chat của một user theo conversation"""
+    """API endpoint lấy lịch sử chat của một user theo conversation"""
     try:
         user_id = request.args.get('user_id', 'anonymous')
         conversation_id = request.args.get('conversation_id')
@@ -142,7 +157,7 @@ def get_history():
         cursor = conn.cursor(dictionary=True)
         
         if conversation_id:
-            # Lấy lịch sử của một cuộc hội thoại cụ thể
+            # Lấy lịch sử chat cụ thể dựa trên Id
             query = '''
                 SELECT user_message, bot_response, timestamp
                 FROM chat_history
@@ -151,7 +166,7 @@ def get_history():
             '''
             cursor.execute(query, (user_id, conversation_id))
         else:
-            # Lấy tất cả lịch sử chat của user
+            # Lấy tất cả lịch sử chat của user_id
             query = '''
                 SELECT conversation_id, user_message, bot_response, timestamp
                 FROM chat_history
@@ -173,7 +188,7 @@ def get_history():
 
 @app.route('/conversations', methods=['GET'])
 def get_conversations():
-    """API endpoint để lấy danh sách các cuộc hội thoại của một user"""
+    """API endpoint lấy danh sách các lịch sử chat của một user"""
     try:
         user_id = request.args.get('user_id', 'anonymous')
         
@@ -202,6 +217,99 @@ def get_conversations():
         logger.error(f"Lỗi khi lấy danh sách cuộc hội thoại: {str(e)}")
         return jsonify({"error": "Không thể lấy danh sách cuộc hội thoại"})
 
+@app.route('/favorites', methods=['GET'])
+def get_favorites():
+    """API endpoint lấy danh sách tin nhắn yêu thích của user"""
+    try:
+        user_id = request.args.get('user_id', 'anonymous')
+        
+        conn = mysql.connector.connect(**MYSQL_CONFIG)
+        cursor = conn.cursor(dictionary=True)
+        
+        query = '''
+            SELECT id, message_id, conversation_id, content, message_type, created_at
+            FROM favorites
+            WHERE user_id = %s
+            ORDER BY created_at DESC
+        '''
+        cursor.execute(query, (user_id,))
+        favorites = cursor.fetchall()
+        
+        cursor.close()
+        conn.close()
+        
+        return jsonify({"favorites": favorites})
+    except Exception as e:
+        logger.error(f"Lỗi khi lấy danh sách yêu thích: {str(e)}")
+        return jsonify({"error": "Không thể lấy danh sách yêu thích"})
+
+@app.route('/favorites', methods=['POST'])
+def add_favorite():
+    """API endpoint thêm tin nhắn vào yêu thích"""
+    try:
+        data = request.json
+        user_id = data.get('user_id', 'anonymous')
+        message_id = data.get('message_id')
+        conversation_id = data.get('conversation_id', 'default')
+        content = data.get('content')
+        message_type = data.get('message_type')  # 'user' hoặc 'bot'
+        
+        conn = mysql.connector.connect(**MYSQL_CONFIG)
+        cursor = conn.cursor()
+        
+        # Kiểm tra xem tin nhắn đã được yêu thích chưa
+        check_query = "SELECT id FROM favorites WHERE message_id = %s AND user_id = %s"
+        cursor.execute(check_query, (message_id, user_id))
+        existing = cursor.fetchone()
+        
+        result = {}
+        
+        if existing:
+            # Nếu đã tồn tại, xóa yêu thích
+            delete_query = "DELETE FROM favorites WHERE message_id = %s AND user_id = %s"
+            cursor.execute(delete_query, (message_id, user_id))
+            conn.commit()
+            result = {"status": "removed", "message": "Đã bỏ yêu thích!"}
+        else:
+            # Thêm mới vào yêu thích
+            insert_query = '''
+                INSERT INTO favorites (user_id, message_id, conversation_id, content, message_type, created_at)
+                VALUES (%s, %s, %s, %s, %s, %s)
+            '''
+            current_time = datetime.now()
+            cursor.execute(insert_query, (user_id, message_id, conversation_id, content, message_type, current_time))
+            conn.commit()
+            result = {"status": "added", "message": "Đã thêm vào yêu thích!"}
+        
+        cursor.close()
+        conn.close()
+        
+        return jsonify(result)
+    except Exception as e:
+        logger.error(f"Lỗi khi thêm/xóa yêu thích: {str(e)}")
+        return jsonify({"error": "Không thể xử lý yêu cầu yêu thích"})
+
+@app.route('/favorites/<favorite_id>', methods=['DELETE'])
+def remove_favorite(favorite_id):
+    """API endpoint để xóa tin nhắn khỏi yêu thích"""
+    try:
+        user_id = request.args.get('user_id', 'anonymous')
+        
+        conn = mysql.connector.connect(**MYSQL_CONFIG)
+        cursor = conn.cursor()
+        
+        delete_query = "DELETE FROM favorites WHERE id = %s AND user_id = %s"
+        cursor.execute(delete_query, (favorite_id, user_id))
+        conn.commit()
+        
+        cursor.close()
+        conn.close()
+        
+        return jsonify({"status": "success", "message": "Đã xóa khỏi yêu thích!"})
+    except Exception as e:
+        logger.error(f"Lỗi khi xóa yêu thích: {str(e)}")
+        return jsonify({"error": "Không thể xóa yêu thích"})
+
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True, port=3000)
+    app.run(debug=True, host='0.0.0.0', port=3000)

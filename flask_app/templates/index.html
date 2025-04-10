@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Rasa Chatbot</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/chatbot.png">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/chatbot.png') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -14,24 +14,17 @@
             <div class="header-title">
                 <span>Chatbot Assistant</span>
             </div>
-            <button id="new-chat-button" class="new-chat-btn">
-                <i class="fas fa-plus"></i> New Chat
-            </button>
+            <div class="header-actions">
+                <button id="history-button" class="history-btn" title="Lịch sử hội thoại">
+                    <i class="fas fa-history"></i>
+                </button>
+                <button id="new-chat-button" class="new-chat-btn">
+                    <i class="fas fa-plus"></i> New Chat
+                </button>
+            </div>
         </div>
         <div class="chat-messages" id="chat-messages">
-            <div class="message">
-                <div class="bot-message-container">
-                    <div class="bot-icon">
-                        <img src="../static/images/chatbot.png" alt="Chatbot" class="bot-icon-img">
-                    </div>
-                    <div class="bot-message-wrapper">
-                        <div class="bot-message">Xin chào! Mình là chatbot hỗ trợ giải đáp quy chế học vụ. Bạn cần giúp gì?</div>
-                        <button class="like-message-btn bot-like-btn" title="Thêm vào yêu thích">
-                            <i class="far fa-heart"></i> 
-                        </button>                        
-                    </div>
-                </div>
-            </div>
+            <!-- Tin nhắn tạo tự động -->
         </div>
         <div class="chat-input-container">
             <input type="text" id="user-input" placeholder="Nhập tin nhắn của bạn..." autocomplete="off">
@@ -44,6 +37,6 @@
         </div>
     </div>
 
-    <script src="../static/script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
