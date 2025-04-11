@@ -254,6 +254,23 @@ def add_favorite():
         content = data.get('content')
         message_type = data.get('message_type')  # 'user' hoặc 'bot'
         
+        # Trích xuất nội dung text từ HTML
+        message_text = ""
+        if message_type == "user":
+            # Trích xuất nội dung từ user-message
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(content, 'html.parser')
+            user_message_element = soup.select_one('.user-message')
+            if user_message_element:
+                message_text = user_message_element.text.strip()
+        else:  # bot
+            # Trích xuất nội dung từ bot-message
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(content, 'html.parser')
+            bot_message_element = soup.select_one('.bot-message')
+            if bot_message_element:
+                message_text = bot_message_element.text.strip()
+        
         conn = mysql.connector.connect(**MYSQL_CONFIG)
         cursor = conn.cursor()
         
@@ -271,13 +288,13 @@ def add_favorite():
             conn.commit()
             result = {"status": "removed", "message": "Đã bỏ yêu thích!"}
         else:
-            # Thêm mới vào yêu thích
+            # Thêm mới vào yêu thích (lưu message_text thay vì content)
             insert_query = '''
                 INSERT INTO favorites (user_id, message_id, conversation_id, content, message_type, created_at)
                 VALUES (%s, %s, %s, %s, %s, %s)
             '''
             current_time = datetime.now()
-            cursor.execute(insert_query, (user_id, message_id, conversation_id, content, message_type, current_time))
+            cursor.execute(insert_query, (user_id, message_id, conversation_id, message_text, message_type, current_time))
             conn.commit()
             result = {"status": "added", "message": "Đã thêm vào yêu thích!"}
         
