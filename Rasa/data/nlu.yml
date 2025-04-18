@@ -58,13 +58,6 @@ nlu:
     - Rất cảm ơn bạn
     - mơn bà nhe 
     - thank you
-
-- intent: help
-  examples:  |
-    - help
-    - cứu 
-    - giúp tui với
-    - help bot
    
 - intent: bot_challenge
   examples: |
@@ -194,6 +187,8 @@ nlu:
     - thời gian thiết kế cho một chương trình đào tạo
     - thời gian hoàn thành chương trình đào tạo
     - thời hạn hoàn thành chương trình đào tạo
+    - thời gian học tập tối đa
+    - thời gian học tập
 
 - intent: quy_dinh_hoc_ky
   examples: |
@@ -218,6 +213,7 @@ nlu:
     - học kỳ 1 học trong bao lâu
     - học kỳ 2 học trong bao lâu
     - học kỳ 3 học trong bao lâu 
+    - các học kỳ kéo dài trong bao lâu
 
 - intent: hoc_ky_phu
   examples: |

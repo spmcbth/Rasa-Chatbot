@@ -4,7 +4,7 @@ version: "3.1"
 language: vi
 
 pipeline:
-- name: custom_components.vietnamese_tokenizer.VietnameseTokenizer
+- name: custom_components.custom_tokenizer.CustomTokenizer
 - name: RegexFeaturizer  # Nhận diện mẫu regex (VD: số điện thoại, email)
 - name: LexicalSyntacticFeaturizer  # Trích xuất đặc trưng từ ngữ pháp và cú pháp
 - name: CountVectorsFeaturizer  # Biến văn bản thành vector số học
@@ -16,7 +16,6 @@ pipeline:
   epochs: 100
   constrain_similarities: true  # Hạn chế sự giống nhau giữa các intent
   embedding_dimension: 20
-- name: EntitySynonymMapper  # Ánh xạ đồng nghĩa cho thực thể (VD: "SV" = "sinh viên")
 - name: FallbackClassifier  # Xử lý fallback
   threshold: 0.4  # Giảm ngưỡng để giảm tỷ lệ fallback không cần thiết
   ambiguity_threshold: 0.1  # Giúp xử lý câu hỏi mơ hồ

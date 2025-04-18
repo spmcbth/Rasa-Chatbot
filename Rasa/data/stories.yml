@@ -17,11 +17,6 @@ stories:
     - intent: thank
     - action: utter_thank
 
-- story: help
-  steps:
-    - intent: help
-    - action: utter_reply_help
-
 - story: bot_challenge
   steps:
     - intent: bot_challenge

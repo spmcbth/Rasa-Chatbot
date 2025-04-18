@@ -121,21 +121,15 @@ def chat():
             return jsonify({"response": bot_response})
         
         # Lấy tin nhắn đầu tiên từ phản hồi
-        bot_response = responses[0].get('text', 'Không có phản hồi')
+        bot_response = '\n'.join([msg['text'] for msg in responses if 'text' in msg])
         
-        # Lưu lịch sử chat vào database
+        # Lưu lịch sử chat vào database (lưu nguyên văn để đảm bảo dữ liệu gốc không bị mất)
         save_chat_history(user_id, conversation_id, user_message, bot_response)
         
-        return jsonify({"response": bot_response})
-    
-    except requests.exceptions.ConnectionError:
-        logger.error("Không thể kết nối đến Rasa server")
-        error_message = "Không thể kết nối đến chatbot server. Vui lòng kiểm tra xem Rasa đã được khởi động chưa."
-        try:
-            save_chat_history(user_id, conversation_id, user_message, error_message)
-        except:
-            pass
-        return jsonify({"response": error_message})
+        # Chuyển đổi xuống dòng (\n) thành <br> trước khi trả về client
+        formatted_response = bot_response.replace('\n', '<br>')
+        
+        return jsonify({"response": formatted_response})
     
     except Exception as e:
         logger.error(f"Lỗi không xác định: {str(e)}")

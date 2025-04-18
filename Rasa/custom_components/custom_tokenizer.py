@@ -11,7 +11,7 @@ from rasa.nlu.tokenizers.tokenizer import Token
 @DefaultV1Recipe.register(
     DefaultV1Recipe.ComponentType.MESSAGE_TOKENIZER, is_trainable=False
 )
-class VietnameseTokenizer(WhitespaceTokenizer):
+class CustomTokenizer(WhitespaceTokenizer):
 
     def tokenize(self, message: Message, attribute: str = TEXT) -> List[Token]:
         text = message.get(attribute)

@@ -204,7 +204,8 @@ document.addEventListener("DOMContentLoaded", function () {
             
             const messageElement = document.createElement("div");
             messageElement.className = "bot-message";
-            messageElement.textContent = text;
+            
+            messageElement.innerHTML = text; // Dùng innerHTML để hiển thị các thẻ HTML
             
             const likeButton = document.createElement("button");
             likeButton.className = "like-message-btn bot-like-btn";
@@ -386,11 +387,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 const favoriteContent = document.createElement("div");
                 favoriteContent.className = "favorite-content";
-                favoriteContent.innerHTML = favorite.content;
+                
+                // Chuyển đổi xuống dòng sang <br> trước khi hiển thị
+                const formattedContent = favorite.content.replace(/\n/g, '<br>');
+                favoriteContent.innerHTML = formattedContent;
                 
                 // Xóa nút like trong nội dung yêu thích
-                const likeButtons = favoriteContent.querySelectorAll('.like-message-btn');
-                likeButtons.forEach(btn => btn.style.display = 'none');
+                setTimeout(() => {
+                    const likeButtons = favoriteContent.querySelectorAll('.like-message-btn');
+                    likeButtons.forEach(btn => btn.style.display = 'none');
+                }, 100);
                 
                 favoriteItem.appendChild(favoriteHeader);
                 favoriteItem.appendChild(favoriteContent);
@@ -526,8 +532,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Thêm tin nhắn người dùng trước
                 addMessage(item.user_message, "user");
                 
+                // Chuyển đổi xuống dòng sang <br> trước khi hiển thị
+                const formattedBotResponse = item.bot_response.replace(/\n/g, '<br>');
+                
                 // Sau đó thêm phản hồi của bot
-                addMessage(item.bot_response, "bot");
+                addMessage(formattedBotResponse, "bot");
             });
             
             // Lưu vào local storage sau khi load

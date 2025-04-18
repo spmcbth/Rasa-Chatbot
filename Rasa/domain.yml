@@ -4,7 +4,6 @@ intents:
   - greet
   - goodbye
   - thank
-  - help 
   - bot_challenge
   - nlu_fallback
   - quy_dinh
@@ -103,359 +102,351 @@ responses:
   - text: "Rất vui được hỗ trợ bạn"
   - text: "Không có chi"
 
-  utter_reply_help:
-  - text: Có chuyện gì thế?
-  - text: Bạn cần gì nào?
-  - text: Tôi có thể giúp gì cho bạn?
-
   utter_iamabot:
   - text: "Mình là Chatbot được tạo ra để hỗ trợ sinh viên Đại học Cần Thơ về quy chế học vụ"
   - text: "Mình là Chatbot giải đáp thắc mắc về quy chế học vụ, hãy hỏi mình bất cứ thứ gì nhé"
   - text: "Mình là Chatbot hỗ trợ bạn trong việc giải đáp quy chế học vụ"
 
   utter_quy_dinh:
-  - text: "Quy định về công tác học vụ bao gồm: tổ chức đào tạo, đánh giá kết quả học tập, xét và công nhận tốt nghiệp"
+  - text: "Quy định về công tác học vụ bao gồm: tổ chức đào tạo, đánh giá kết quả học tập, xét và công nhận tốt nghiệp."
   
   utter_doi_tuong_ap_dung:
-  - text: "Quy địnnh này áp dụng đối với sinh viên các ngành, khóa đào tạo trình độ đại học hệ chính quy của Trường Đại học Cần Thơ"
+  - text: "Quy địnnh này áp dụng đối với sinh viên các ngành, khóa đào tạo trình độ đại học hệ chính quy của Trường Đại học Cần Thơ."
 
   utter_sv_chinh_quy:
-  - text: "Sinh viên hệ chính quy của Trường Đại học Cần Thơ là những người đã trúng tuyển kỳ thi tuyển sinh hoặc được xét tuyển và có quyết định thu nhận vào Trường"
+  - text: "Sinh viên hệ chính quy của Trường Đại học Cần Thơ là những người đã trúng tuyển kỳ thi tuyển sinh hoặc được xét tuyển và có quyết định thu nhận vào Trường."
   
   utter_quy_dinh_dong_phuc:
-  - text: "Khi vào trường, sinh viên phải mang bảng tên, trang phục sạch sẽ, gọn gàng, kín đáo; phải mặc đồng phục khi tham dự những học phần có yêu cầu"
+  - text: "Khi vào trường, sinh viên phải mang bảng tên, trang phục sạch sẽ, gọn gàng, kín đáo; phải mặc đồng phục khi tham dự những học phần có yêu cầu."
 
   utter_quy_dinh_sv:
-  - text: "Sinh viên phải giữ trật tự, vệ sinh, chấp hành luật giao thông, để xe đúng nơi quy định. Sinh viên Trường ĐHCT phải có nếp sống văn minh; không làm ồn, gây mất trật tự; không tụ tập uống rượu bia"
+  - text: "Sinh viên phải giữ trật tự, vệ sinh, chấp hành luật giao thông, để xe đúng nơi quy định. Sinh viên Trường ĐHCT phải có nếp sống văn minh; không làm ồn, gây mất trật tự; không tụ tập uống rượu bia."
 
   utter_chuong_trinh_dao_tao:
-  - text: "Chương trình đào tạo của mỗi ngành học được xây dựng theo đơn vị tín chỉ (TC), gồm các học phần thuộc khối kiến thức giáo dục đại cương và giáo dục chuyên nghiệp. Sinh viên phải tích lũy đủ các học phần và khối lượng TC tối thiểu theo yêu cầu của CTĐT để được xét cấp bằng tốt ngiệp"
+  - text: "Chương trình đào tạo của mỗi ngành học được xây dựng theo đơn vị tín chỉ (TC), gồm các học phần thuộc khối kiến thức giáo dục đại cương và giáo dục chuyên nghiệp. Sinh viên phải tích lũy đủ các học phần và khối lượng TC tối thiểu theo yêu cầu của CTĐT để được xét cấp bằng tốt ngiệp."
 
   utter_xet_tot_nghiep:
   - text: |
       Sinh viên có đủ các điều kiện sau đây sẽ được xét công nhận tốt nghiệp:
-        1. Tích lũy đủ số tín chỉ và đạt ĐTBCTL từ 2.00 trở lên (thang điểm 4)
-        2. Đạt chuẩn đầu ra của CTĐT, bao gồm ngoại ngữ và CNTT
-        3. Hoàn thành các học phần điều kiện, GDQP&AN đạt từ 5.0 (thang điểm 10)
-        4. Không bị truy cứu trách nhiệm hình sự hoặc đình chỉ học tập
+
+        1. Tích lũy đủ số tín chỉ và đạt ĐTBCTL từ 2.00 trở lên (thang điểm 4).
+        2. Đạt chuẩn đầu ra của CTĐT, bao gồm ngoại ngữ và CNTT.
+        3. Hoàn thành các học phần điều kiện, GDQP&AN đạt từ 5.0 (thang điểm 10).
+        4. Không bị truy cứu trách nhiệm hình sự hoặc đình chỉ học tập.
 
   utter_tgian_dao_tao:
   - text: |
       Thời gian học tập tối đa để sinh viên hoàn thành CTĐT được quy định như sau:
-        - CTĐT 4 năm: tối đa 8 năm
-        - CTĐT 4,5 năm: tối đa 9 năm
-        - CTĐT 5 năm: tối đa 10 năm
 
-      Sinh viên học liên thông hoặc có kết quả học tập đã tích lũy từ một ngành đào tạo khác có thể được xem xét công nhận, chuyển đổi tín chỉ theo quy định. Đối với sinh viên tuyển sinh từ năm học 2021 - 2022 (Khóa 47) trở về sau, khối lượng tín chỉ tối đa được công nhận và chuyển đổi không vượt quá 50% khối lượng học tập tối thiểu của CTĐT
+        - CTĐT 4 năm: tối đa 8 năm.
+        - CTĐT 4,5 năm: tối đa 9 năm.
+        - CTĐT 5 năm: tối đa 10 năm.
+
+      Sinh viên học liên thông hoặc có kết quả học tập đã tích lũy từ một ngành đào tạo khác có thể được xem xét công nhận, chuyển đổi tín chỉ theo quy định. 
+      Đối với sinh viên tuyển sinh từ năm học 2021 - 2022 (Khóa 47) trở về sau, khối lượng tín chỉ tối đa được công nhận và chuyển đổi không vượt quá 50% khối lượng học tập tối thiểu của CTĐT.
 
   utter_quy_dinh_hoc_ky:
-  - text: "Mỗi năm học được chia thành 3 học kỳ: HK1, HK2 và HK3. Mỗi HK kéo dài 15 tuần"
+  - text: "Mỗi năm học được chia thành 3 học kỳ: HK1, HK2 và HK3. Mỗi HK kéo dài 15 tuần."
 
   utter_hoc_ky:
   - text: |
       Mỗi năm học được chia thành 3 học kỳ:
-      - Học kỳ 1: từ tuần 37 đến tuần 51
-      - Học kỳ 2: từ tuần 1 đến tuần 17 (bao gồm 2 tuần nghỉ Tết Nguyên Đán)
-      - Học kỳ 3: từ tuần 20 đến tuần 34
+
+      - Học kỳ 1: từ tuần 37 đến tuần 51.
+      - Học kỳ 2: từ tuần 1 đến tuần 17 (bao gồm 2 tuần nghỉ Tết Nguyên Đán).
+      - Học kỳ 3: từ tuần 20 đến tuần 34.
 
       Mỗi học kỳ kéo dài 15 tuần, gồm:
-      - 11 tuần dạy và học
-      - 01 tuần dự trữ và tổ chức thi những học phần thi riêng
-      - 01 tuần tổ chức thi những học phần thi riêng còn lại
-      - 02 tuần tổ chức thi những học phần thi chung và xử lý kết quả
 
-      Tuần nghỉ giữa các học kỳ: tuần 18, 19, 35, 36, 52 và tuần 53 (nếu có) của năm
+      - 11 tuần dạy và học.
+      - 01 tuần dự trữ và tổ chức thi những học phần thi riêng.
+      - 01 tuần tổ chức thi những học phần thi riêng còn lại.
+      - 02 tuần tổ chức thi những học phần thi chung và xử lý kết quả.
+
+      Tuần nghỉ giữa các học kỳ: tuần 18, 19, 35, 36, 52 và tuần 53 (nếu có) của năm.
 
   utter_hoc_ky_phu:
-  - text: "Theo quy định mới của CTĐT mỗi năm học sẽ được chia thành 3 học kỳ, mỗi học kỳ sẽ kéo dài 15 tuần và không có học kỳ phụ"
+  - text: "Theo quy định mới của CTĐT mỗi năm học sẽ được chia thành 3 học kỳ, mỗi học kỳ sẽ kéo dài 15 tuần và không có học kỳ phụ."
 
   utter_hoc_phan:
-  - text: "Học phần là lượng kiến thức tương đối trọn vẹn được dạy trong 1 học kỳ. Mỗi học phần có tên riêng và được ký hiệu bằng một mã số"
+  - text: "Học phần là lượng kiến thức tương đối trọn vẹn được dạy trong 1 học kỳ. Mỗi học phần có tên riêng và được ký hiệu bằng một mã số."
 
   utter_hoc_phan_bat_buoc:
-  - text: "Học phần bắt buộc là học phần sinh viên phải tích lũy"
+  - text: "Học phần bắt buộc là học phần sinh viên phải tích lũy."
 
   utter_hoc_phan_tu_chon:
-  - text: "Học phần tự chọn là học phần sinh viên tự lựa chọn để tích lũy"
+  - text: "Học phần tự chọn là học phần sinh viên tự lựa chọn để tích lũy."
   
   utter_hoc_phan_tien_quyet:
-  - text: "Học phần tiên quyết là học phần mà sinh viên phải tích lũy mới được đăng ký học học phần tiếp theo"
+  - text: "Học phần tiên quyết là học phần mà sinh viên phải tích lũy mới được đăng ký học học phần tiếp theo."
 
   utter_hoc_phan_song_hanh:
-  - text: "Học phần song hành là học phần mà sinh viên phải học trước hoặc học cùng lúc với một học phần khác"
+  - text: "Học phần song hành là học phần mà sinh viên phải học trước hoặc học cùng lúc với một học phần khác."
 
   utter_hoc_phan_dieu_kien:
-  - text: "Học phần điều kiện là học phần sinh viên phải hoàn thành nhưng kết quả học tập không được tính vào điểm trung bình chung. Các học phần điều kiện bao gồm: Giáo dục Quốc phòng - An ninh, Giáo dục thể chất, Ngoại ngữ căn bản, Tin học căn bản"
+  - text: "Học phần điều kiện là học phần sinh viên phải hoàn thành nhưng kết quả học tập không được tính vào điểm trung bình chung. Các học phần điều kiện bao gồm: Giáo dục Quốc phòng - An ninh, Giáo dục thể chất, Ngoại ngữ căn bản, Tin học căn bản."
 
   utter_lop_hoc_phan:
-  - text: "Lớp học phần là lớp bao gồm những sinh viên đăng ký học cùng thời khóa biểu (TKB) của một học phần trong học kỳ. Trong một học kỳ, mỗi học phần có thể có nhiều lớp học phần cùng TKB với mã số khác nhau và có giảng viên phụ trách"
+  - text: "Lớp học phần là lớp bao gồm những sinh viên đăng ký học cùng thời khóa biểu (TKB) của một học phần trong học kỳ. Trong một học kỳ, mỗi học phần có thể có nhiều lớp học phần cùng TKB với mã số khác nhau và có giảng viên phụ trách."
 
   utter_lop_chuyen_nganh:
-  - text: "Lớp chuyên ngành là lớp được hình thành từ đầu khóa học cho đến cuối khóa học. Lớp này được tổ chức để duy trì sinh hoạt đoàn thể, lao động, xét kết quả rèn luyện, xét khen thưởng, phổ biến thông tin của trường, đơn vị đào tạo đến sinh viên. Mỗi lớp chuyên ngành có mã số riêng và được bố trí một CVHT để tư vấn và hỗ trợ sinh viên"
+  - text: "Lớp chuyên ngành là lớp được hình thành từ đầu khóa học cho đến cuối khóa học. Lớp này được tổ chức để duy trì sinh hoạt đoàn thể, lao động, xét kết quả rèn luyện, xét khen thưởng, phổ biến thông tin của trường, đơn vị đào tạo đến sinh viên. Mỗi lớp chuyên ngành có mã số riêng và được bố trí một CVHT để tư vấn và hỗ trợ sinh viên."
 
   utter_tin_chi:
-  - text: "Khối lượng học tập của mỗi CTĐT hoặc mỗi học phần được xác định bằng số tín chỉ (TC). Một tín chỉ tương đương 50 giờ học tập định mức của sinh viên, bao gồm giờ giảng, giờ học có hướng dẫn, tự học, nghiên cứu, thực hành và kiểm tra"
+  - text: "Khối lượng học tập của mỗi CTĐT hoặc mỗi học phần được xác định bằng số tín chỉ (TC). Một tín chỉ tương đương 50 giờ học tập định mức của sinh viên, bao gồm giờ giảng, giờ học có hướng dẫn, tự học, nghiên cứu, thực hành và kiểm tra."
 
   utter_thoi_luong_tin_chi:
-  - text: "Mỗi tín chỉ yêu cầu tối thiểu 15 giờ giảng trên lớp và 30 giờ tự học. Nếu là tín chỉ thực hành, thí nghiệm thì cần ít nhất 30 giờ thực hành trên lớp và 15 giờ tự học"
-  - text: "Một tín chỉ bằng 15 tiết học lý thuyết và 30 tiết tự học; hoặc 30 tiết thực hành, thí nghiệm, thảo luận, seminar… và 15 tiết tự học; hoặc 45 tiết thực tập tại cơ sở, làm tiểu luận, bài tập lớn, đồ án, niên luận, tiểu luận tốt nghiệp, luận văn tốt nghiệp"
+  - text: "Một tín chỉ bằng 15 tiết học lý thuyết và 30 tiết tự học; hoặc 30 tiết thực hành, thí nghiệm, thảo luận, seminar… và 15 tiết tự học; hoặc 45 tiết thực tập tại cơ sở, làm tiểu luận, bài tập lớn, đồ án, niên luận, tiểu luận tốt nghiệp, luận văn tốt nghiệp."
   
   utter_tiet_hoc:
-  - text: "Một tiết học trên lớp được tính bằng 50 phút"
+  - text: "Một tiết học trên lớp được tính bằng 50 phút."
 
   utter_tin_chi_hoc_4_nam:
-  - text: "Khối lượng chương trình đào tạo 4 năm từ khóa 36 đến khóa 39 là 120 tín chỉ. Từ khóa 40 trở về sau là 140 tín chỉ"
+  - text: "Khối lượng chương trình đào tạo 4 năm từ khóa 36 đến khóa 39 là 120 tín chỉ. Từ khóa 40 trở về sau là 140 tín chỉ."
 
   utter_tin_chi_hoc_4_5_nam:
-  - text: "Khối lượng chương trình đào tạo 4.5 năm từ khóa 36 đến khóa 39 là 135 tín chỉ. Từ khóa 40 trở về sau là 155 tín chỉ"
+  - text: "Khối lượng chương trình đào tạo 4.5 năm từ khóa 36 đến khóa 39 là 135 tín chỉ. Từ khóa 40 trở về sau là 155 tín chỉ."
 
   utter_tin_chi_hoc_5_nam:
-  - text: "Khối lượng chương trình đào tạo 5 năm từ khóa 36 đến khóa 39 là 150 tín chỉ. Từ khóa 40 trở về sau là 170 tín chỉ"
+  - text: "Khối lượng chương trình đào tạo 5 năm từ khóa 36 đến khóa 39 là 150 tín chỉ. Từ khóa 40 trở về sau là 170 tín chỉ."
 
   utter_xet_hoc_bong:
-  - text: | 
-      Điều kiện để đượcđược xét học bổng là: 
-      - Có số TC đăng ký tối thiểu trong HK trước đó là 12 TC (trừ trường hợp do Trường bố trí)
-      - HK trước đó, SV có kết quả học tập và rèn luyện đạt từ loại khá trở lên, trong đó không có học phần dưới điểm D 
-      - Không bị kỷ luật từ mức khiển trách cấp Trường trở lên
+  - text: |
+      Điều kiện để được xét học bổng là: 
+
+      - Có số TC đăng ký tối thiểu trong HK trước đó là 12 TC (trừ trường hợp do Trường bố trí).
+      - HK trước đó, SV có kết quả học tập và rèn luyện đạt từ loại khá trở lên, trong đó không có học phần dưới điểm D.
+      - Không bị kỷ luật từ mức khiển trách cấp Trường trở lên.
 
   utter_muc_hoc_bong:
   - text: |
       Tiêu chuẩn cho từng mức học bổng được quy định như sau:
-      - Loại Xuất sắc: Điểm trung bình chung học kỳ và điểm rèn luyện đạt loại Xuất sắc
-      - Loại Giỏi: Điểm trung bình chung học kỳ đạt từ loại Giỏi và điểm rèn luyện đạt từ loại Tốt trở lên
-      - Loại Khá: Điểm trung bình chung học kỳ và điểm rèn luyện đạt từ loại Khá trở lên
+
+      - Loại Xuất sắc: Điểm trung bình chung học kỳ và điểm rèn luyện đạt loại Xuất sắc.
+      - Loại Giỏi: Điểm trung bình chung học kỳ đạt từ loại Giỏi và điểm rèn luyện đạt từ loại Tốt trở lên.
+      - Loại Khá: Điểm trung bình chung học kỳ và điểm rèn luyện đạt từ loại Khá trở lên.
 
   utter_quy_dinh_muc_hoc_bong:
-  - text: "Mức học bổng do Hiệu trưởng quy định"
+  - text: "Mức học bổng do Hiệu trưởng quy định."
 
   utter_tro_cap_xa_hoi:
-  - text: "Đối tượng nhận trợ cấp xã hội bao gồm sinh viên dân tộc ít người ở vùng cao, sinh viên mồ côi cả cha lẫn mẹ, sinh viên tàn tật trên 41%, sinh viên thuộc hộ nghèo, hộ đói theo quy định"
+  - text: "Đối tượng nhận trợ cấp xã hội bao gồm sinh viên dân tộc ít người ở vùng cao, sinh viên mồ côi cả cha lẫn mẹ, sinh viên tàn tật trên 41%, sinh viên thuộc hộ nghèo, hộ đói theo quy định."
 
   utter_hoc_phi:
-  - text: "Học phí đóng theo học kỳ và tính theo tổng số tín chỉ mà sinh viên đã đăng ký học ở học kỳ đó. Mức học phí do Hiệu trưởng quyết định"
+  - text: "Học phí đóng theo học kỳ và tính theo tổng số tín chỉ mà sinh viên đã đăng ký học ở học kỳ đó. Mức học phí do Hiệu trưởng quyết định."
 
   utter_tre_hoc_phi:
-  - text: "Sau thời hạn đóng học phí, sinh viên không đóng học phí sẽ bị hủy kết quả học tập những học phần nợ học phí trong học kì đó và buộc phải đóng học phí còn nợ cùng lúc với học phí của học kì tiếp theo. Không đóng học phí 2 học kì liên tiếp sẽ bị buộc thôi học"
+  - text: "Sau thời hạn đóng học phí, sinh viên không đóng học phí sẽ bị hủy kết quả học tập những học phần nợ học phí trong học kì đó và buộc phải đóng học phí còn nợ cùng lúc với học phí của học kì tiếp theo. Không đóng học phí 2 học kì liên tiếp sẽ bị buộc thôi học."
 
   utter_tin_dung_sv:
-  - text: "Sinh viên có thể xin vay tín dụng từ các Ngân hàng Chính sách xã hội tại địa phương nơi gia đình sinh viên cư trú. Trường sẽ cấp giấy xác nhận để sinh viên bổ sung hồ sơ xin vay vốn"
+  - text: "Sinh viên có thể xin vay tín dụng từ các Ngân hàng Chính sách xã hội tại địa phương nơi gia đình sinh viên cư trú. Trường sẽ cấp giấy xác nhận để sinh viên bổ sung hồ sơ xin vay vốn."
 
   utter_chuyen_truong:
-  - text: "Sinh viên được xét chuyển trường nếu gia đình chuyển nơi cư trú hoặc sinh viên có hoàn cảnh gia đình khó khăn cần phải chuyển đến trường gần nơi cư trú để thuận tiện cho việc học tập và phải được sự đồng ý của Hiệu trưởng trường xin đi và trường xin chuyển đến"
+  - text: "Sinh viên được xét chuyển trường nếu gia đình chuyển nơi cư trú hoặc sinh viên có hoàn cảnh gia đình khó khăn cần phải chuyển đến trường gần nơi cư trú để thuận tiện cho việc học tập và phải được sự đồng ý của Hiệu trưởng trường xin đi và trường xin chuyển đến."
 
   utter_thuc_tap_thuc_te:
-  - text: "Là học phần giúp sinh viên củng cố kiến thức lý thuyết đã được trang bị trong nhà trường và vận dụng những kiến thức đó vào thực tế, rèn luyện kỹ năng thực hành, tích lũy kinh nghiệm làm việc thông qua việc thực hiện các công việc thực tiễn mà cơ quan tiếp nhận sinh viên thực tập giao cho, rèn luyện ý thức chấp hành kỷ luật lao động, thái độ giao tiếp với mọi người, phát huy tinh thần học hỏi, chủ động sáng tạo trong việc giải quyết các vấn đề của thực tiễn sản xuất, lao động và cuộc sống"
+  - text: "Là học phần giúp sinh viên củng cố kiến thức lý thuyết đã được trang bị trong nhà trường và vận dụng những kiến thức đó vào thực tế, rèn luyện kỹ năng thực hành, tích lũy kinh nghiệm làm việc thông qua việc thực hiện các công việc thực tiễn mà cơ quan tiếp nhận sinh viên thực tập giao cho, rèn luyện ý thức chấp hành kỷ luật lao động, thái độ giao tiếp với mọi người, phát huy tinh thần học hỏi, chủ động sáng tạo trong việc giải quyết các vấn đề của thực tiễn sản xuất, lao động và cuộc sống."
 
   utter_tgian_thuc_tap:
-  - text: "TTTT được mở trong HK hè, một số trường hợp khác có thể trong học kì chính. Sinh viên phải trải qua 8 tuần thực tập thực tế và phải đăng kí và đóng tiền học phần như các môn khác"
+  - text: "TTTT được mở trong HK hè, một số trường hợp khác có thể trong học kì chính. Sinh viên phải trải qua 8 tuần thực tập thực tế và phải đăng kí và đóng tiền học phần như các môn khác."
 
   utter_dieu_kien_thuc_tap:
-  - text: "Sinh viên phải tích lũy đủ 120 tín chỉ, trong đó phải bao gồm các tín chỉ yêu cầu cho thực tập, sinh viên phải đăng ký HP TTTT thì mới có thể đi thực tập"
+  - text: "Sinh viên phải tích lũy đủ 120 tín chỉ, trong đó phải bao gồm các tín chỉ yêu cầu cho thực tập, sinh viên phải đăng ký HP TTTT thì mới có thể đi thực tập."
 
   utter_sau_thuc_tap:
-  - text: "Sau khi kết thúc đợt thực tập, mỗi nhóm sinh viên thực tập phải nộp một báo cáo thực tập theo mẫu báo cáo thực tập"
+  - text: "Sau khi kết thúc đợt thực tập, mỗi nhóm sinh viên thực tập phải nộp một báo cáo thực tập theo mẫu báo cáo thực tập."
 
   utter_luan_van_tot_nghiep:
-  - text: | 
+  - text: |
       - Sau khi hoàn thành luận văn, SV sẽ phải bảo vệ trước hội đồng gồm 3 thành viên, trong đó có cán bộ hướng dẫn sinh viên đó. Hội đồng bảo vệ luận văn do trưởng khoa quyết định. 
-      - Điểm luận văn tốt nghiệp là trung bình cộng của 3 thành viên hội đồng, mỗi thành viên hội đồng có trọng số bằng nhau
+
+      - Điểm luận văn tốt nghiệp là trung bình cộng của 3 thành viên hội đồng, mỗi thành viên hội đồng có trọng số bằng nhau.
         
-      Trong trường hợp không thể tổ chức đánh giá tập trung tại Trường, việc tổ chức bảo vệ và đánh giá sẽ được thực hiện trực tuyến theo quy định
+      - Trong trường hợp không thể tổ chức đánh giá tập trung tại Trường, việc tổ chức bảo vệ và đánh giá sẽ được thực hiện trực tuyến theo quy định
 
   utter_tin_chi_luan_van:
-  - text: "Luận văn tốt nghiệp có khối lượng 10 tín chỉ đối với chương trình đào tạo 140 tín chỉ, hoặc 15 tín chỉ đối với chương trình đào tạo từ 155 tín chỉ trở lên"
+  - text: "Luận văn tốt nghiệp có khối lượng 10 tín chỉ đối với chương trình đào tạo 140 tín chỉ, hoặc 15 tín chỉ đối với chương trình đào tạo từ 155 tín chỉ trở lên."
 
   utter_tin_chi_tieu_luan:
-  - text: "Tiểu luận tốt nghiệp có khối lượng 4 tín chỉ đối với chương trình đào tạo 140 tín chỉ, hoặc 6 tín chỉ đối với chương trình đào tạo từ 155 tín chỉ trở lên"
+  - text: "Tiểu luận tốt nghiệp có khối lượng 4 tín chỉ đối với chương trình đào tạo 140 tín chỉ, hoặc 6 tín chỉ đối với chương trình đào tạo từ 155 tín chỉ trở lên."
 
   utter_tieu_luan_tot_nghiep:
-  - text: "Tiểu luận tốt nghiệp do cán bộ hướng dẫn và 1 cán bộ khác chấm điểm, không phải bảo vệ trước hội đồng. Cán bộ chấm điểm do trưởng đơn vị đào tạo quyết định"
+  - text: "Tiểu luận tốt nghiệp do cán bộ hướng dẫn và 1 cán bộ khác chấm điểm, không phải bảo vệ trước hội đồng. Cán bộ chấm điểm do trưởng đơn vị đào tạo quyết định."
 
   utter_tich_luy_TC_tot_nghiep:
-  - text: "Sinh viên có thể không làm LVTN hoặc TLTN, nhưng phải học thêm các học phần tự chọn để đủ số TC theo yêu cầu của chương trình đào tạo"
+  - text: "Sinh viên có thể không làm LVTN hoặc TLTN, nhưng phải học thêm các học phần tự chọn để đủ số TC theo yêu cầu của chương trình đào tạo."
 
   utter_nhan_de_tai:
-  - text: "Để nhận đề tài luận văn tốt nghiệp hay tiểu luận tốt nghiệp, sinh viên phải thỏa mãn các điều kiện do khoa quy định. Cuối mỗi học kỳ, khoa xét và công bố hình thức thực hiện cuối khóa cho sinh viên ở học kỳ tiếp theo"
+  - text: "Để nhận đề tài luận văn tốt nghiệp hay tiểu luận tốt nghiệp, sinh viên phải thỏa mãn các điều kiện do khoa quy định. Cuối mỗi học kỳ, khoa xét và công bố hình thức thực hiện cuối khóa cho sinh viên ở học kỳ tiếp theo."
 
   utter_dang_ky_LV_TL:
-  - text: "Sinh viên làm luận văn tốt nghiệp hay tiểu luận tốt nghiệp đều phải đăng ký học phần như các học phần khác"
+  - text: "Sinh viên làm luận văn tốt nghiệp hay tiểu luận tốt nghiệp đều phải đăng ký học phần như các học phần khác."
 
   utter_diem_kem_LV_TL:
-  - text: "Bị điểm F luận văn tốt nghiệp hoặc tiểu luận tốt nghiệp phải đăng ký làm lại hoặc đăng ký các học phần thay thế để hoàn thành chương trình đào tạo"
+  - text: "Bị điểm F luận văn tốt nghiệp hoặc tiểu luận tốt nghiệp phải đăng ký làm lại hoặc đăng ký các học phần thay thế để hoàn thành chương trình đào tạo."
 
   utter_tgian_xet_tot_nghiep:
-  - text: "Hằng năm, sinh viên được xét tốt nghiệp vào tháng 1, tháng 6 và tháng 8. Sinh viên được nhận bằng tốt nghiệp 30 ngày kế từ ngày có quyết định công nhận tốt nghiệp. Lễ trao bằng tốt nghiệp được tổ chức vào tháng 4 và tháng 9; riêng các Khoa có đào tạo giáo viên tổ chức vào tháng 8"
+  - text: "Hằng năm, sinh viên được xét tốt nghiệp vào tháng 1, tháng 6 và tháng 8. Sinh viên được nhận bằng tốt nghiệp 30 ngày kế từ ngày có quyết định công nhận tốt nghiệp. Lễ trao bằng tốt nghiệp được tổ chức vào tháng 4 và tháng 9; riêng các Khoa có đào tạo giáo viên tổ chức vào tháng 8."
 
   utter_dky_xet_tot_nghiep:
-  - text: "Sinh viên đăng ký xét tốt nghiệp thông qua hệ thống quản lý trực tuyến của Trường"
+  - text: "Sinh viên đăng ký xét tốt nghiệp thông qua hệ thống quản lý trực tuyến của Trường."
 
   utter_hoi_dong_xet_tot_nghiep:
-  - text: | 
-      - Hội đồng xét tốt nghiệp chịu trách nhiệm xét tốt nghiệp đúng thời hạn, đúng đối tượng và đề nghị Hiệu trưởng công nhận những sinh viên đủ điều kiện tốt nghiệp
-      - Phòng Đào tạo và Phòng Công tác Sinh viên chịu trách nhiệm thẩm định và trình Hiệu trưởng ký quyết định công nhận tốt nghiệp"
+  - text: |
+      - Hội đồng xét tốt nghiệp chịu trách nhiệm xét tốt nghiệp đúng thời hạn, đúng đối tượng và đề nghị Hiệu trưởng công nhận những sinh viên đủ điều kiện tốt nghiệp.
+      - Phòng Đào tạo và Phòng Công tác Sinh viên chịu trách nhiệm thẩm định và trình Hiệu trưởng ký quyết định công nhận tốt nghiệp.
 
   utter_cong_nhan_tot_nghiep:
-  - text: "Sinh viên đủ điều kiện tốt nghiệp được nhận quyết định công nhận tốt nghiệp, bảng điểm học tập toàn khóa và bằng tốt nghiệp. Nếu có yêu cầu nhận bản sao bằng tốt nghiệp, sinh viên phải nộp chi phí theo quy định của Trường"
+  - text: "Sinh viên đủ điều kiện tốt nghiệp được nhận quyết định công nhận tốt nghiệp, bảng điểm học tập toàn khóa và bằng tốt nghiệp. Nếu có yêu cầu nhận bản sao bằng tốt nghiệp, sinh viên phải nộp chi phí theo quy định của Trường."
 
   utter_danh_gia_hoc_phan:
-  - text: "Đối với học phần lý thuyết hoặc lý thuyết kết hợp thực hành, điểm học phần được đánh giá tối thiểu hai điểm thành phần: điểm bài tập, kiểm tra giữa kỳ, điểm thực hành, điểm đánh giá nhận thức, điểm tham gia thảo luận, điểm chuyên cần, điểm đồ án,... và điểm thi kết thúc học phần. Điểm thi kết thúc học phần là bắt buộc và có trọng số không dưới 50%"
+  - text: "Đối với học phần lý thuyết hoặc lý thuyết kết hợp thực hành, điểm học phần được đánh giá tối thiểu hai điểm thành phần: điểm bài tập, kiểm tra giữa kỳ, điểm thực hành, điểm đánh giá nhận thức, điểm tham gia thảo luận, điểm chuyên cần, điểm đồ án,... và điểm thi kết thúc học phần. Điểm thi kết thúc học phần là bắt buộc và có trọng số không dưới 50%."
 
   utter_hoc_phan_thuc_hanh:
-  - text: "Điểm học phần thực hành được tính bằng điểm trung bình của các bài thực hành"
+  - text: "Điểm học phần thực hành được tính bằng điểm trung bình của các bài thực hành."
   
   utter_diem_hoc_phan:
   - text: |
       - Điểm học phần sẽ được công bố và ghi nhận theo thang điểm 10 và điểm chữ. Điểm chữ được quy đổi sang điểm số theo thang điểm 4 để tính ĐTBCHK và ĐTBCTL. 
-      - Học phần chỉ được tích lũy khi đạt từ thang điểm D trở lên 
-
-      Giảng viên phụ trách nhập điểm vào hệ thống quản lý để đổi sang thang điểm 4 và điểm chữ theo bảng dưới đây:
-        -----------------------------------------------------------
-        | Điểm số theo thang 10 | Điểm chữ | Điểm số theo thang 4 |
-        |-----------------------|----------|----------------------|
-        |      9,0 – 10,0       |    A     |         4,0          |
-        |      8,0 – 8,9        |    B+    |         3,5          |
-        |      7,0 – 7,9        |    B     |         3,0          |
-        |      6,5 – 6,9        |    C+    |         2,5          |
-        |      5,5 – 6,4        |    C     |         2,0          |
-        |      5,0 – 5,4        |    D+    |         1,5          |
-        |      4,0 – 4,9        |    D     |         1,0          |
-        |     Nhỏ hơn 4,0       |    F     |         0,0          |
-        -----------------------------------------------------------
+      - Học phần chỉ được tích lũy khi đạt từ thang điểm D trở lên.
+      - Giảng viên phụ trách nhập điểm vào hệ thống quản lý để đổi sang thang điểm 4 và điểm chữ theo quy định.
         
   utter_diem_A:
-  - text: "Sinh viên phải đạt được điểm từ 9.0 đến 10.0 theo thang điểm 10 và từ 3.6 đến 4.0 theo thang điểm 4 để đạt điểm A"
+  - text: "Sinh viên phải đạt được điểm từ 9.0 đến 10.0 theo thang điểm 10 và từ 3.6 đến 4.0 theo thang điểm 4 để đạt điểm A."
 
   utter_diem_B_plus:
-  - text: "Sinh viên phải đạt được điểm từ 8.0 đến 8.9 theo thang điểm 10 và 3.5 theo thang điểm 4 để đạt điểm B+"
+  - text: "Sinh viên phải đạt được điểm từ 8.0 đến 8.9 theo thang điểm 10 và 3.5 theo thang điểm 4 để đạt điểm B+."
 
   utter_diem_B:
-  - text: "Sinh viên phải đạt được điểm từ 7.0 đến 7.9 theo thang điểm 10 và 3.0 theo thang điểm 4 để đạt điểm B"
+  - text: "Sinh viên phải đạt được điểm từ 7.0 đến 7.9 theo thang điểm 10 và 3.0 theo thang điểm 4 để đạt điểm B."
 
   utter_diem_C_plus:
-  - text: "Sinh viên phải đạt được điểm từ 6.5 đến 6.9 theo thang điểm 10 và 2.5 theo thang điểm 4 để đạt điểm C+"
+  - text: "Sinh viên phải đạt được điểm từ 6.5 đến 6.9 theo thang điểm 10 và 2.5 theo thang điểm 4 để đạt điểm C+."
 
   utter_diem_C:
-  - text: "Sinh viên phải đạt được điểm từ 5.5 đến 6.4 theo thang điểm 10 và 2.0 theo thang điểm 4 để đạt điểm C"
+  - text: "Sinh viên phải đạt được điểm từ 5.5 đến 6.4 theo thang điểm 10 và 2.0 theo thang điểm 4 để đạt điểm C."
 
   utter_diem_D_plus:
-  - text: "Sinh viên phải đạt được điểm từ 5.0 đến 5.4 theo thang điểm 10 và 1.5 theo thang điểm 4 để đạt điểm D+"
+  - text: "Sinh viên phải đạt được điểm từ 5.0 đến 5.4 theo thang điểm 10 và 1.5 theo thang điểm 4 để đạt điểm D+."
 
   utter_diem_D:
-  - text: "Sinh viên phải đạt được điểm từ 4.0 đến 4.9 theo thang điểm 10 và 1.0 theo thang điểm 4 để đạt điểm D"
+  - text: "Sinh viên phải đạt được điểm từ 4.0 đến 4.9 theo thang điểm 10 và 1.0 theo thang điểm 4 để đạt điểm D."
 
   utter_diem_F:
-  - text: "Sinh viên đạt điểm dưới 4.0 theo thang điểm 10 sẽ nhận điểm F, tương ứng với 0.0 theo thang điểm 4"
+  - text: "Sinh viên đạt điểm dưới 4.0 theo thang điểm 10 sẽ nhận điểm F, tương ứng với 0.0 theo thang điểm 4."
 
   utter_hoc_phan_duoc_tich_luy:
-  - text: "Học phần chỉ được tích lũy khi đạt từ thang điểm D trở lên, tức là từ 4.0 theo thang điểm 10 và 1.0 theo thang điểm 4"
+  - text: "Học phần chỉ được tích lũy khi đạt từ thang điểm D trở lên, tức là từ 4.0 theo thang điểm 10 và 1.0 theo thang điểm 4."
 
   utter_diem_hoc_phan_khac:
-  - text: |
-      Ngoài các loại điểm A, B, C, D, F, còn có các điểm học phần khác như:
-        - Điểm M: Xác nhận học phần sinh viên được miễn học do đã tích lũy bằng các hình thức khác. Điểm M không được tính vào ĐTBCHK và ĐTBCTL. Số tín chỉ của học phần có điểm M vẫn được tính vào tổng số tín chỉ tích lũy. Để nhận điểm M, sinh viên phải làm đơn có ý kiến của trưởng đơn vị đào tạo và cung cấp giấy tờ hợp lệ
-        - Điểm I: Áp dụng khi đánh giá kết thúc học phần. Dành cho các trường hợp sinh viên đã dự học, tham gia kiểm tra giữa kỳ, thực hiện các hoạt động liên quan đến học phần nhưng chưa thể hoàn thành thi học phần do lý do bất khả kháng như ốm đau, tai nạn... và được giảng viên phụ trách học phần chấp thuận bổ sung điểm. Điểm I không được tính vào ĐTBCHK ở học kỳ đó. Sinh viên cần làm đơn kèm theo hồ sơ hợp lệ nộp cho giảng viên để xem xét. Việc bổ sung điểm phải hoàn thành trong vòng 1 năm, nếu không sinh viên sẽ nhận điểm F
-        - Điểm W: Dành cho các học phần mà sinh viên được phép rút theo quy định. Điểm W không tính vào ĐTBCHK và ĐTBCTL
+  - text: "Ngoài các loại điểm A, B, C, D, F, còn có các điểm học phần khác như: điểm M, I, W."
 
   utter_diem_M:
-  - text: "Điểm M: Xác nhận học phần sinh viên được miễn học do đã tích lũy bằng các hình thức khác. Điểm M không được tính vào ĐTBCHK và ĐTBCTL. Số tín chỉ của học phần có điểm M vẫn được tính vào tổng số tín chỉ tích lũy. Để nhận điểm M, sinh viên phải làm đơn có ý kiến của trưởng đơn vị đào tạo và cung cấp giấy tờ hợp lệ"
+  - text: "Điểm M: Xác nhận học phần sinh viên được miễn học do đã tích lũy bằng các hình thức khác. Điểm M không được tính vào ĐTBCHK và ĐTBCTL. Số tín chỉ của học phần có điểm M vẫn được tính vào tổng số tín chỉ tích lũy. Để nhận điểm M, sinh viên phải làm đơn có ý kiến của trưởng đơn vị đào tạo và cung cấp giấy tờ hợp lệ."
 
   utter_diem_I:
-  - text: "Điểm I: Áp dụng khi đánh giá kết thúc học phần. Dành cho các trường hợp sinh viên đã dự học, tham gia kiểm tra giữa kỳ, thực hiện các hoạt động liên quan đến học phần nhưng chưa thể hoàn thành thi học phần do lý do bất khả kháng như ốm đau, tai nạn... và được giảng viên phụ trách học phần chấp thuận bổ sung điểm. Điểm I không được tính vào ĐTBCHK ở học kỳ đó. Sinh viên cần làm đơn kèm theo hồ sơ hợp lệ nộp cho giảng viên để xem xét. Việc bổ sung điểm phải hoàn thành trong vòng 1 năm, nếu không sinh viên sẽ nhận điểm F"
+  - text: "Điểm I: Áp dụng khi đánh giá kết thúc học phần. Dành cho các trường hợp sinh viên đã dự học, tham gia kiểm tra giữa kỳ, thực hiện các hoạt động liên quan đến học phần nhưng chưa thể hoàn thành thi học phần do lý do bất khả kháng như ốm đau, tai nạn... và được giảng viên phụ trách học phần chấp thuận bổ sung điểm. Điểm I không được tính vào ĐTBCHK ở học kỳ đó. Sinh viên cần làm đơn kèm theo hồ sơ hợp lệ nộp cho giảng viên để xem xét. Việc bổ sung điểm phải hoàn thành trong vòng 1 năm, nếu không sinh viên sẽ nhận điểm F."
 
   utter_diem_W:
-  - text: "Điểm W: Dành cho các học phần mà sinh viên được phép rút theo quy định. Điểm W không tính vào ĐTBCHK và ĐTBCTL"
+  - text: "Điểm W: Dành cho các học phần mà sinh viên được phép rút theo quy định. Điểm W không tính vào ĐTBCHK và ĐTBCTL."
 
   utter_thi_ket_thuc_hoc_phan:
   - text: |
-      - Kỳ thi kết thúc học phần chỉ được tổ chức 1 lần và lịch thi kết thúc học phần phải được thông báo đến tất cả sinh viên chậm nhất 1 tuần trước ngày thi
-      - Thời gian tổ chức thi sẽ được thực hiện theo quy định. Đối với các học phần riêng lẻ giảng viên tự sắp xếp để tổ chức thi đối với các học phần có nhiều sinh viên được giảng dạy nhiều lớp học phần thì sẽ thi theo lịch chung do khoa quản lý học phần xếp
+      - Kỳ thi kết thúc học phần chỉ được tổ chức 1 lần và lịch thi kết thúc học phần phải được thông báo đến tất cả sinh viên chậm nhất 1 tuần trước ngày thi.
+      - Thời gian tổ chức thi sẽ được thực hiện theo quy định. Đối với các học phần riêng lẻ giảng viên tự sắp xếp để tổ chức thi đối với các học phần có nhiều sinh viên được giảng dạy nhiều lớp học phần thì sẽ thi theo lịch chung do khoa quản lý học phần xếp.
 
   utter_vang_thi:
-  - text: "Nếu sinh viên có lý do chính đáng không thể dự thi, được cố vấn học tập và giảng viên giảng dạy học phần chấp nhận thì được phép vắng thi sinh viên đó sẽ nhận điểm I theo quy định"
+  - text: "Nếu sinh viên có lý do chính đáng không thể dự thi, được cố vấn học tập và giảng viên giảng dạy học phần chấp nhận thì được phép vắng thi sinh viên đó sẽ nhận điểm I theo quy định."
 
   utter_tin_chi_tich_luy:
-  - text: "Tín chỉ tích lũy là tổng số tín chỉ của các học phần đã tích lũy"
+  - text: "Tín chỉ tích lũy là tổng số tín chỉ của các học phần đã tích lũy."
 
   utter_DTB_hoc_ky:
-  - text: "ĐTBCHK là trung bình có trọng số của điểm các học phần mà sinh viên đã học trong học trong học kỳ (kể cả các học phần bị điểm F và học phần điều kiện trừ học phần GDTC)"
+  - text: "ĐTBCHK là trung bình có trọng số của điểm các học phần mà sinh viên đã học trong học trong học kỳ (kể cả các học phần bị điểm F và học phần điều kiện trừ học phần GDTC)."
 
   utter_DTB_nam_hoc:
-  - text: "ĐTBCNH là trung bình có trọng số của điểm các học phần mà sinh viên đã học trong năm học (kể cả các học phần bị điểm F và học phần điều kiện trừ học phần GDTC)"
+  - text: "ĐTBCNH là trung bình có trọng số của điểm các học phần mà sinh viên đã học trong năm học (kể cả các học phần bị điểm F và học phần điều kiện trừ học phần GDTC)."
 
   utter_DTB_tich_luy:
-  - text: "ĐTBCTL là trung bình có trọng số củ điểm các học phần đã tích lũy tính đến thời điểm xét (không bao gồm các học phần bị điểm F và học phần điều kiện). Là cơ sở đánh giá kết quả học tập trong suốt thời gian học, xếp loại học tập, xếp hạng tốt nghiệp"
+  - text: "ĐTBCTL là trung bình có trọng số củ điểm các học phần đã tích lũy tính đến thời điểm xét (không bao gồm các học phần bị điểm F và học phần điều kiện). Là cơ sở đánh giá kết quả học tập trong suốt thời gian học, xếp loại học tập, xếp hạng tốt nghiệp."
 
   utter_xep_loai:
-  - text: | 
+  - text: |
       Xếp loại học tập HK được căn cứ vào ĐTBCHK; Xếp loại học tập NH được căn cứ vào ĐTBCNH như sau:
-        - Loại xuất sắc từ 3.60 đến 4.00  
+
+        - Loại xuất sắc từ 3.60 đến 4.00
         - Loại giỏi từ 3.20 đến 3.59 
         - Loại khá từ 2.50 đến 2.49 
         - Loại trung bình từ 1.00 đến 1.49 
         - Loại kém là ĐTBCHK và ĐCTCNH < 1.00
 
   utter_diem_ren_luyen:
-  - text: "Mức độ rèn luyện của SV được đánh giá từng HK và đo lường bằng ĐRL được chấm theo thang điểm 100 dựa vào các quy định hiện hành. ĐRL cả năm là trung bình cộng của ĐRL 3 HK"
+  - text: "Mức độ rèn luyện của SV được đánh giá từng HK và đo lường bằng ĐRL được chấm theo thang điểm 100 dựa vào các quy định hiện hành. ĐRL cả năm là trung bình cộng của ĐRL 3 HK."
 
   utter_khen_thuong:
   - text: |
       Nếu sinh viên học đủ từ 12 TC trở lên cho mỗi HK, không vi phạm kỷ luật từ khiển trách cấp trường trở lên đạt, đạt thành tích cao trong học tập và rèn luyện sẽ được xếp loại khen thưởng như sau:
-        - Loại xuất sắc: học tập và rèn luyện đạt loại xuất sắc
-        - Loại giỏi: học tập đạt từ loại giỏi và rèn luyện đạt từ loại tốt trở lên
-        - Loại khá: học và rèn luyện đạt từ loại khá trở lên
+        
+        - Loại xuất sắc: học tập và rèn luyện đạt loại xuất sắc.
+        - Loại giỏi: học tập đạt từ loại giỏi và rèn luyện đạt từ loại tốt trở lên.
+        - Loại khá: học và rèn luyện đạt từ loại khá trở lên.
 
   utter_quy_dinh_thi_ktra:
   - text: |
       Sinh viên có trách nhiệm chấp hành các quy định thi và kiểm tra, cụ thể như sau:
-        - Thực hiện đúng lịch thi và kiểm tra. Nếu đi trễ 15 phút sẽ coi như không dự thi và bị điểm F môn học đó
-        - Phải mang thẻ SV hoặc giấy tờ có ảnh và thông tin cá nhân do cơ quan có thẩm quyền cấp như chứng minh nhân dân, căn cước công dân, giấy phép lái xe,... Các vật dụng không được sử dụng trong phòng thi phải để tập trung đúng nơi quy định
-        - Trong thời gian thi, SV chỉ được ra ngoài khi có lí do chính đáng và phải được CBCT đồng ý lập biên bản
-        - Bài thi phải làm trên giấy thi thống nhất và không được sử dụng bút đỏ làm bài, giấy thi và giấy nháp phải có chữ ký của CBCT. Các bài thi không hợp lệ sẽ không được chấm điểm
-        - Trong giờ thi, SV phải nghiêm túc làm bài và giữ trật tự
-        - Hết giờ làm bài, SV phải ngừng viết, để bài trước mặt và im lặng chờ CBCT thu bài
+
+        - Thực hiện đúng lịch thi và kiểm tra. Nếu đi trễ 15 phút sẽ coi như không dự thi và bị điểm F môn học đó.
+        - Phải mang thẻ SV hoặc giấy tờ có ảnh và thông tin cá nhân do cơ quan có thẩm quyền cấp như chứng minh nhân dân, căn cước công dân, giấy phép lái xe,... Các vật dụng không được sử dụng trong phòng thi phải để tập trung đúng nơi quy định.
+        - Trong thời gian thi, SV chỉ được ra ngoài khi có lí do chính đáng và phải được CBCT đồng ý lập biên bản.
+        - Bài thi phải làm trên giấy thi thống nhất và không được sử dụng bút đỏ làm bài, giấy thi và giấy nháp phải có chữ ký của CBCT. Các bài thi không hợp lệ sẽ không được chấm điểm.
+        - Trong giờ thi, SV phải nghiêm túc làm bài và giữ trật tự.
+        - Hết giờ làm bài, SV phải ngừng viết, để bài trước mặt và im lặng chờ CBCT thu bài.
      
-      Sinh viên vi phạm các quy định được nêu trên đều sẽ bị CBCT lập biên bản và xử lý kỷ luật theo quy định
+      Sinh viên vi phạm các quy định được nêu trên đều sẽ bị CBCT lập biên bản và xử lý kỷ luật theo quy định.
 
   utter_xu_ly_vi_pham:
-  - text: "Có 3 hình thức xử lý tùy theo mức độ vi phạm là khiển trách, cảnh cáo và đình chỉ thi"
+  - text: "Có 3 hình thức xử lý tùy theo mức độ vi phạm là khiển trách, cảnh cáo và đình chỉ thi."
 
   utter_khien_trach:
   - text: |
       Khiển trách khi SV vi phạm một trong số lỗi sau đây: 
-        - Nhìn bài của người khác
-        - Trao đổi, thảo luận với người khác
+
+        - Nhìn bài của người khác.
+        - Trao đổi, thảo luận với người khác.
       
-      SV bị khiển trách sẽ bị trừ 25% điểm số của lần thi/kiểm tra đó. SV bị khiển trách 2 lần trong 1 năm học sẽ bị kỷ luật cảnh cáo toàn đơn vị đào tạo nơi quản lý SV
+      SV bị khiển trách sẽ bị trừ 25% điểm số của lần thi/kiểm tra đó. SV bị khiển trách 2 lần trong 1 năm học sẽ bị kỷ luật cảnh cáo toàn đơn vị đào tạo nơi quản lý SV.
 
   utter_canh_cao:
   - text: |
       Cảnh cáo khi SV vi phạm một trong số lỗi sau đây: 
-        - Đã bị khiển trách 1 lần nhưng vẫn tiếp tục vi phạm trong buổi thi 
-        - Trao đổi giáy nháp cho nhau nhưng chưa sử dụng (xử lý cả 2 SV)
-        - Chép bài của người khác hoặc để cho người khác chép bài của mình
-        - Không chấp hành sự quản lý, nhắc nhở của CBCT hoặc có thái độ thiếu tôn trọng, vô lễ với CBCT
+
+        - Đã bị khiển trách 1 lần nhưng vẫn tiếp tục vi phạm trong buổi thi.
+        - Trao đổi giáy nháp cho nhau nhưng chưa sử dụng (xử lý cả 2 SV).
+        - Chép bài của người khác hoặc để cho người khác chép bài của mình.
+        - Không chấp hành sự quản lý, nhắc nhở của CBCT hoặc có thái độ thiếu tôn trọng, vô lễ với CBCT.
       
-      SV bị cảnh cáo sẽ bị trừ 50% điểm số của lần thi/kiểm tra đó. SV bị cảnh cáo thi 2 lần trong 1 năm học sẽ bị kỷ luật cảnh cáo toàn Trường
+      SV bị cảnh cáo sẽ bị trừ 50% điểm số của lần thi/kiểm tra đó. SV bị cảnh cáo thi 2 lần trong 1 năm học sẽ bị kỷ luật cảnh cáo toàn Trường.
 
   utter_dinh_chi:
   - text: |
       Đình chỉ khi SV vi phạm một trong số lỗi sau đây: 
-        - Đã bị cảnh cáo 1 lần nhưng vẫn tiếp tục vi phạm trong buổi thi
-        - Sau khi mở đề thi bị phát hiện vẫn còn mang theo những vật dụng không được phép mang vào phòng thi
-        - Sử dụng giấy nháp hoặc bài làm của người khác (xử lý cả 2 SV)
-        - Đưa đề thi ra ngoài nhờ người khác giải hộ hoặc nhận bài giải từ ngoài vào phòng thi
-        - Có hành động gây rối hoặc đe dọa CBCT hoặc SV khác
+
+        - Đã bị cảnh cáo 1 lần nhưng vẫn tiếp tục vi phạm trong buổi thi.
+        - Sau khi mở đề thi bị phát hiện vẫn còn mang theo những vật dụng không được phép mang vào phòng thi.
+        - Sử dụng giấy nháp hoặc bài làm của người khác (xử lý cả 2 SV).
+        - Đưa đề thi ra ngoài nhờ người khác giải hộ hoặc nhận bài giải từ ngoài vào phòng thi.
+        - Có hành động gây rối hoặc đe dọa CBCT hoặc SV khác.
       
-      SV bị đình chỉ sẽ nhận 0 điểm cho lần thi/kiểm tra đó. SV bị đình chỉ thi 2 lần trong 1 năm học sẽ bị đình chỉ học tập 1 năm sau đó. Nếu tái phạm sẽ bị buộc thôi học
+      SV bị đình chỉ sẽ nhận 0 điểm cho lần thi/kiểm tra đó. SV bị đình chỉ thi 2 lần trong 1 năm học sẽ bị đình chỉ học tập 1 năm sau đó. Nếu tái phạm sẽ bị buộc thôi học.
 
   utter_thi_ho:
   - text: |
       Xử lý thi hộ sẽ được áp dụng cho cả người thi hộ và người thi hộ như sau:
-        - Vi phạm lần 1: người nhờ thi hộ sẽ nhận điểm 0 học phần đó; cả người thi hộ và người nhờ thi hộ đều sẽ bị đỉnh chỉ học tập 1 năm
-        - Vi phạm lần 2 (trong cả khóa học): buộc thôi học
 
-      Các trường hợp vi phạm khác tùy mức độ sẽ do Hội đồng kỷ luật xem xét và quyết định hình thức xử lý 
+        - Vi phạm lần 1: người nhờ thi hộ sẽ nhận điểm 0 học phần đó; cả người thi hộ và người nhờ thi hộ đều sẽ bị đỉnh chỉ học tập 1 năm.
+        - Vi phạm lần 2 (trong cả khóa học): buộc thôi học.
+
+      Các trường hợp vi phạm khác tùy mức độ sẽ do Hội đồng kỷ luật xem xét và quyết định hình thức xử lý.
 
   utter_fallback:
   - text: "Xin lỗi, tôi vẫn chưa hiểu bạn cần hỏi gì"
