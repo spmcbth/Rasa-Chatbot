@@ -29,7 +29,7 @@ def init_db():
         conn = mysql.connector.connect(**MYSQL_CONFIG)
         cursor = conn.cursor()
         
-        # Bảng chat_history
+        # Bảng chat_history với trường intent mới
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS chat_history (
                 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -37,20 +37,30 @@ def init_db():
                 conversation_id VARCHAR(100),
                 user_message TEXT,
                 bot_response TEXT,
+                intent VARCHAR(100),
                 timestamp DATETIME
             )
         ''')
         
-        # Bảng yêu thích
+        # Bảng yêu thích với trường intent mới
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS favorites (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 user_id VARCHAR(100),
-                message_id VARCHAR(100) UNIQUE,
                 conversation_id VARCHAR(100),
                 content TEXT,
                 message_type ENUM('user', 'bot'),
                 created_at DATETIME
+            )
+        ''')
+        
+        # Thêm bảng users để lưu trữ thông tin user
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS users (
+                user_id VARCHAR(100) PRIMARY KEY,
+                first_visit DATETIME,
+                last_visit DATETIME,
+                visit_count INT DEFAULT 1
             )
         ''')
         
@@ -61,7 +71,44 @@ def init_db():
     except Exception as e:
         logger.error(f"Lỗi khi khởi tạo database: {str(e)}")
 
-def save_chat_history(user_id, conversation_id, user_message, bot_response):
+def update_user_info(user_id):
+    """Cập nhật hoặc tạo mới thông tin người dùng"""
+    try:
+        conn = mysql.connector.connect(**MYSQL_CONFIG)
+        cursor = conn.cursor()
+        
+        current_time = datetime.now()
+        
+        # Kiểm tra xem user_id đã tồn tại chưa
+        check_query = "SELECT user_id, visit_count FROM users WHERE user_id = %s"
+        cursor.execute(check_query, (user_id,))
+        existing_user = cursor.fetchone()
+        
+        if existing_user:
+            # Cập nhật thông tin user nếu đã tồn tại
+            update_query = '''
+                UPDATE users 
+                SET last_visit = %s, visit_count = visit_count + 1 
+                WHERE user_id = %s
+            '''
+            cursor.execute(update_query, (current_time, user_id))
+        else:
+            # Tạo mới user nếu chưa tồn tại
+            insert_query = '''
+                INSERT INTO users (user_id, first_visit, last_visit, visit_count)
+                VALUES (%s, %s, %s, 1)
+            '''
+            cursor.execute(insert_query, (user_id, current_time, current_time))
+        
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return True
+    except Exception as e:
+        logger.error(f"Lỗi khi cập nhật thông tin người dùng: {str(e)}")
+        return False
+
+def save_chat_history(user_id, conversation_id, user_message, bot_response, intent=""):
     """Lưu lịch sử hội thoại vào database"""
     try:
         conn = mysql.connector.connect(**MYSQL_CONFIG)
@@ -69,11 +116,11 @@ def save_chat_history(user_id, conversation_id, user_message, bot_response):
         
         # Thêm lịch sử chat vào bảng
         query = '''
-            INSERT INTO chat_history (user_id, conversation_id, user_message, bot_response, timestamp)
-            VALUES (%s, %s, %s, %s, %s)
+            INSERT INTO chat_history (user_id, conversation_id, user_message, bot_response, intent, timestamp)
+            VALUES (%s, %s, %s, %s, %s, %s)
         '''
         current_time = datetime.now()
-        cursor.execute(query, (user_id, conversation_id, user_message, bot_response, current_time))
+        cursor.execute(query, (user_id, conversation_id, user_message, bot_response, intent, current_time))
         
         conn.commit()
         logger.info(f"Đã lưu hội thoại vào database cho user: {user_id}, conversation: {conversation_id}")
@@ -94,6 +141,9 @@ def chat():
         user_message = request.json.get('message', '')
         user_id = request.json.get('user_id', 'anonymous')
         conversation_id = request.json.get('conversation_id', 'default')
+        
+        # Cập nhật thông tin người dùng
+        update_user_info(user_id)
         
         logger.info(f"Nhận tin nhắn từ người dùng {user_id}, cuộc hội thoại {conversation_id}: {user_message}")
         
@@ -123,8 +173,25 @@ def chat():
         # Lấy tin nhắn đầu tiên từ phản hồi
         bot_response = '\n'.join([msg['text'] for msg in responses if 'text' in msg])
         
+                # Trích xuất intent từ tracker (duyệt event kiểu "user")
+        intent = ""
+        try:
+            tracker_response = requests.get(
+                f"http://localhost:5005/conversations/{user_id}/tracker",
+                timeout=5
+            )
+            tracker_data = tracker_response.json()
+            events = tracker_data.get("events", [])
+            for event in reversed(events):
+                if event.get("event") == "user":
+                    intent = event.get("parse_data", {}).get("intent", {}).get("name", "")
+                    if intent:
+                        break
+        except Exception as intent_err:
+            logger.warning(f"Không thể lấy intent từ tracker: {str(intent_err)}")
+        
         # Lưu lịch sử chat vào database (lưu nguyên văn để đảm bảo dữ liệu gốc không bị mất)
-        save_chat_history(user_id, conversation_id, user_message, bot_response)
+        save_chat_history(user_id, conversation_id, user_message, bot_response, intent)
         
         # Chuyển đổi xuống dòng (\n) thành <br> trước khi trả về client
         formatted_response = bot_response.replace('\n', '<br>')
@@ -239,67 +306,46 @@ def get_favorites():
 
 @app.route('/favorites', methods=['POST'])
 def add_favorite():
-    """API endpoint thêm tin nhắn vào yêu thích"""
     try:
         data = request.json
         user_id = data.get('user_id', 'anonymous')
-        message_id = data.get('message_id')
         conversation_id = data.get('conversation_id', 'default')
         content = data.get('content')
-        message_type = data.get('message_type')  # 'user' hoặc 'bot'
-        
-        # Trích xuất nội dung text từ HTML
+        message_type = data.get('message_type')
+
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup(content, 'html.parser')
         message_text = ""
         if message_type == "user":
-            # Trích xuất nội dung từ user-message
-            from bs4 import BeautifulSoup
-            soup = BeautifulSoup(content, 'html.parser')
-            user_message_element = soup.select_one('.user-message')
-            if user_message_element:
-                message_text = user_message_element.text.strip()
-        else:  # bot
-            # Trích xuất nội dung từ bot-message
-            from bs4 import BeautifulSoup
-            soup = BeautifulSoup(content, 'html.parser')
-            bot_message_element = soup.select_one('.bot-message')
-            if bot_message_element:
-                message_text = bot_message_element.text.strip()
-        
+            el = soup.select_one('.user-message')
+            if el:
+                message_text = el.text.strip()
+        else:
+            el = soup.select_one('.bot-message')
+            if el:
+                message_text = el.text.strip()
+
         conn = mysql.connector.connect(**MYSQL_CONFIG)
         cursor = conn.cursor()
-        
-        # Kiểm tra xem tin nhắn đã được yêu thích chưa
-        check_query = "SELECT id FROM favorites WHERE message_id = %s AND user_id = %s"
-        cursor.execute(check_query, (message_id, user_id))
-        existing = cursor.fetchone()
-        
-        result = {}
-        
-        if existing:
-            # Nếu đã tồn tại, xóa yêu thích
-            delete_query = "DELETE FROM favorites WHERE message_id = %s AND user_id = %s"
-            cursor.execute(delete_query, (message_id, user_id))
-            conn.commit()
-            result = {"status": "removed", "message": "Đã bỏ yêu thích!"}
-        else:
-            # Thêm mới vào yêu thích (lưu message_text thay vì content)
-            insert_query = '''
-                INSERT INTO favorites (user_id, message_id, conversation_id, content, message_type, created_at)
-                VALUES (%s, %s, %s, %s, %s, %s)
-            '''
-            current_time = datetime.now()
-            cursor.execute(insert_query, (user_id, message_id, conversation_id, message_text, message_type, current_time))
-            conn.commit()
-            result = {"status": "added", "message": "Đã thêm vào yêu thích!"}
-        
+
+        # Không cần kiểm tra message_id nữa
+        insert_query = '''
+            INSERT INTO favorites (user_id, conversation_id, content, message_type, created_at)
+            VALUES (%s, %s, %s, %s, %s)
+        '''
+        current_time = datetime.now()
+        cursor.execute(insert_query, (user_id, conversation_id, message_text, message_type, current_time))
+        conn.commit()
+        result = {"status": "added", "message": "Đã thêm vào yêu thích!"}
+
         cursor.close()
         conn.close()
-        
+
         return jsonify(result)
     except Exception as e:
         logger.error(f"Lỗi khi thêm/xóa yêu thích: {str(e)}")
         return jsonify({"error": "Không thể xử lý yêu cầu yêu thích"})
-
+        
 @app.route('/favorites/<favorite_id>', methods=['DELETE'])
 def remove_favorite(favorite_id):
     """API endpoint để xóa tin nhắn khỏi yêu thích"""
@@ -323,4 +369,4 @@ def remove_favorite(favorite_id):
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True, host='0.0.0.0', port=3000)
+    app.run(debug=True, host='0.0.0.0')

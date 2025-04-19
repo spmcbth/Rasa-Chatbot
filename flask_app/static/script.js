@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Tạo ID người dùng ngẫu nhiên
+    // Tạo ID người dùng ngẫu nhiên khi lần đầu truy cập, hoặc lấy từ localStorage
     let userId = localStorage.getItem("chatbot_user_id");
     if (!userId) {
-        userId = "user_" + Math.random().toString(36).substring(2, 15);
+        userId = "user_" + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
         localStorage.setItem("chatbot_user_id", userId);
+        console.log("Đã tạo mới user ID:", userId);
+    } else {
+        console.log("Sử dụng user ID đã tồn tại:", userId);
     }
 
-    // Lấy hoặc tạo ID cuộc hội thoại
+    // Lấy hoặc tạo ID cho hội thoại
     let conversationId = localStorage.getItem("current_conversation_id");
     if (!conversationId) {
         conversationId = "conv_" + Date.now();
@@ -70,6 +73,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     userInput.focus();
 
+    // Kiểm tra kết nối user ID mỗi khi trang được tải
+    checkUserConnection();
+    
     loadChatHistory();  // Load lại chat history
 
     sendButton.addEventListener("click", sendMessage);
@@ -82,6 +88,20 @@ document.addEventListener("DOMContentLoaded", function () {
     historyButton.addEventListener("click", toggleHistoryPanel);
     closeFavoritesButton.addEventListener("click", closeFavoritesPanel);
     closeHistoryButton.addEventListener("click", closeHistoryPanel);
+
+    // Kiểm tra kết nối user ID
+    function checkUserConnection() {
+        fetch(`/check-user?user_id=${userId}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                console.log("Kết nối user ID thành công");
+            }
+        })
+        .catch(error => {
+            console.error("Lỗi khi kiểm tra kết nối user ID:", error);
+        });
+    }
 
     // Event listeners cho phần yêu thích
     document.addEventListener("click", function(e) {
@@ -294,8 +314,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Thêm/xóa trạng thái yêu thích
     function toggleFavorite(messageContainer) {
-        const messageId = messageContainer.getAttribute("data-message-id");
-        const timestamp = messageContainer.getAttribute("data-timestamp") || new Date().toLocaleString();
         const likeButton = messageContainer.querySelector('.like-message-btn');
         
         // Xác định loại tin nhắn
@@ -310,7 +328,6 @@ document.addEventListener("DOMContentLoaded", function () {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 user_id: userId,
-                message_id: messageId,
                 conversation_id: conversationId,
                 content: messageContainer.innerHTML,
                 message_type: messageType
@@ -435,32 +452,13 @@ document.addEventListener("DOMContentLoaded", function () {
         panel.classList.remove("show");
     }
 
-    // Ẩn/hiện chat history panel
-    function toggleHistoryPanel() {
-        if (isProcessingAction) return;
-        isProcessingAction = true;
-        
-        const panel = document.getElementById("history-panel");
-        const favPanel = document.getElementById("favorites-panel");
-        favPanel.classList.remove("show");  // Đóng panel yêu thích nếu đang mở
-        
-        const isVisible = panel.classList.contains("show");
-        
-        if (isVisible) {
-            panel.classList.remove("show");
-        } else {
-            loadConversationHistory();
-            panel.classList.add("show");
-        }
-    }
-
     // Đóng chat history panel
     function closeHistoryPanel() {
         const panel = document.getElementById("history-panel");
         panel.classList.remove("show");
     }
 
-    // Load hội thoại
+    // Load danh sách hội thoại
     function loadConversationHistory() {
         fetch(`/conversations?user_id=${userId}`)
         .then(response => response.json())
@@ -502,6 +500,25 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Lỗi khi tải lịch sử hội thoại:", error);
             historyList.innerHTML = "<p class='no-history'>Đã xảy ra lỗi khi tải lịch sử</p>";
         });
+    }
+
+    // Ẩn/hiện chat history panel
+    function toggleHistoryPanel() {
+        if (isProcessingAction) return;
+        isProcessingAction = true;
+        
+        const panel = document.getElementById("history-panel");
+        const favPanel = document.getElementById("favorites-panel");
+        favPanel.classList.remove("show");  // Đóng panel yêu thích nếu đang mở
+        
+        const isVisible = panel.classList.contains("show");
+        
+        if (isVisible) {
+            panel.classList.remove("show");
+        } else {
+            loadConversationHistory();
+            panel.classList.add("show");
+        }
     }
 
     // Load hội thoại theo Id
