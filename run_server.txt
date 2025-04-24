@@ -1,7 +1,0 @@
-cd Rasa
-rasa run --enable-api --cors "*"
-
-cd flask_app
-python app.py
-
-rasa test nlu --nlu data/nlu --cross-validation --folds 5

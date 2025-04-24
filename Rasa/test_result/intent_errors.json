@@ -1,0 +1,474 @@
+[
+  {
+    "text": "hi",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "thi_ket_thuc_hoc_phan",
+      "confidence": 0.19124296307563782
+    }
+  },
+  {
+    "text": "good by",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8672052025794983
+    }
+  },
+  {
+    "text": "tạm biệt",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "diem_hoc_phan_khac",
+      "confidence": 0.5784356594085693
+    }
+  },
+  {
+    "text": "good",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9346033334732056
+    }
+  },
+  {
+    "text": "bạn là gì?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.40314996242523193
+    }
+  },
+  {
+    "text": "thời gian học của một học kỳ",
+    "intent": "quy_dinh_hoc_ky",
+    "intent_prediction": {
+      "name": "tiet_hoc",
+      "confidence": 0.18517355620861053
+    }
+  },
+  {
+    "text": "học kỳ phụ kéo dài bao lâu",
+    "intent": "hoc_ky_phu",
+    "intent_prediction": {
+      "name": "hoc_ky",
+      "confidence": 0.3403041362762451
+    }
+  },
+  {
+    "text": "học 5 năm cần bao nhiêu chỉ",
+    "intent": "tin_chi_hoc_5_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_4_nam",
+      "confidence": 0.4024747908115387
+    }
+  },
+  {
+    "text": "cần hoàn thành bao nhiêu chỉ nếu học 5 năm",
+    "intent": "tin_chi_hoc_5_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_4_nam",
+      "confidence": 0.4571336805820465
+    }
+  },
+  {
+    "text": "đủ điều kiện tốt nghiệp",
+    "intent": "cong_nhan_tot_nghiep",
+    "intent_prediction": {
+      "name": "hoi_dong_xet_tot_nghiep",
+      "confidence": 0.8760504722595215
+    }
+  },
+  {
+    "text": "đánh giá điểm học phần của sinh viên",
+    "intent": "hoc_phan_thuc_hanh",
+    "intent_prediction": {
+      "name": "danh_gia_hoc_phan",
+      "confidence": 0.5913074612617493
+    }
+  },
+  {
+    "text": "có những quy định nào về kỳ thi",
+    "intent": "quy_dinh_thi_ktra",
+    "intent_prediction": {
+      "name": "thi_ket_thuc_hoc_phan",
+      "confidence": 0.272462397813797
+    }
+  },
+  {
+    "text": "chào bạn",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.8380466103553772
+    }
+  },
+  {
+    "text": "have a nice day",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.15728269517421722
+    }
+  },
+  {
+    "text": "khối lượng học tập là gì",
+    "intent": "tin_chi",
+    "intent_prediction": {
+      "name": "thoi_luong_tin_chi",
+      "confidence": 0.25835347175598145
+    }
+  },
+  {
+    "text": "tín chỉ học 4 năm",
+    "intent": "tin_chi_hoc_4_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_5_nam",
+      "confidence": 0.5798319578170776
+    }
+  },
+  {
+    "text": "tổng chỉ khi học 4 năm",
+    "intent": "tin_chi_hoc_4_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_5_nam",
+      "confidence": 0.6199573278427124
+    }
+  },
+  {
+    "text": "chương trình đào tạo 5 năm học bao nhiêu chỉ",
+    "intent": "tin_chi_hoc_5_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_4_nam",
+      "confidence": 0.5355755090713501
+    }
+  },
+  {
+    "text": "chương trình đào tạo 5 năm cần bao nhiêu chỉ để tốt nghiệp",
+    "intent": "tin_chi_hoc_5_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_4_nam",
+      "confidence": 0.6153359413146973
+    }
+  },
+  {
+    "text": "những tháng xét tốt nghiệp",
+    "intent": "tgian_xet_tot_nghiep",
+    "intent_prediction": {
+      "name": "xet_tot_nghiep",
+      "confidence": 0.7367252111434937
+    }
+  },
+  {
+    "text": "hội đồng xét tốt nghiệp",
+    "intent": "hoi_dong_xet_tot_nghiep",
+    "intent_prediction": {
+      "name": "xet_tot_nghiep",
+      "confidence": 0.4976344406604767
+    }
+  },
+  {
+    "text": "đáp ứng điều kiện tốt nghiệp",
+    "intent": "cong_nhan_tot_nghiep",
+    "intent_prediction": {
+      "name": "xet_tot_nghiep",
+      "confidence": 0.9519736170768738
+    }
+  },
+  {
+    "text": "loại kém",
+    "intent": "xep_loai",
+    "intent_prediction": {
+      "name": "diem_kem_LV_TL",
+      "confidence": 0.35571542382240295
+    }
+  },
+  {
+    "text": "thời gian thiết kế cho một chương trình đào tạo",
+    "intent": "tgian_dao_tao",
+    "intent_prediction": {
+      "name": "thoi_luong_tin_chi",
+      "confidence": 0.23457647860050201
+    }
+  },
+  {
+    "text": "số tín chỉ cần hoàn thành trong khung đào tạo 4 năm",
+    "intent": "tin_chi_hoc_4_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_5_nam",
+      "confidence": 0.5518758296966553
+    }
+  },
+  {
+    "text": "số chỉ cần học theo chương trình đào tạo 4 năm",
+    "intent": "tin_chi_hoc_4_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_5_nam",
+      "confidence": 0.4528374969959259
+    }
+  },
+  {
+    "text": "tổng chỉ chương trình đào tạo 5 năm",
+    "intent": "tin_chi_hoc_5_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_4_nam",
+      "confidence": 0.4554550349712372
+    }
+  },
+  {
+    "text": "tổng chỉ khi học 5 năm",
+    "intent": "tin_chi_hoc_5_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_4_nam",
+      "confidence": 0.4631381332874298
+    }
+  },
+  {
+    "text": "thực tập thực tế khi nào",
+    "intent": "tgian_thuc_tap",
+    "intent_prediction": {
+      "name": "dieu_kien_thuc_tap",
+      "confidence": 0.5044469833374023
+    }
+  },
+  {
+    "text": "khi nào thực tập thực tế",
+    "intent": "tgian_thuc_tap",
+    "intent_prediction": {
+      "name": "dieu_kien_thuc_tap",
+      "confidence": 0.5182206630706787
+    }
+  },
+  {
+    "text": "nhận quyết định công nhận tốt nghiệp",
+    "intent": "cong_nhan_tot_nghiep",
+    "intent_prediction": {
+      "name": "hoi_dong_xet_tot_nghiep",
+      "confidence": 0.8037084937095642
+    }
+  },
+  {
+    "text": "điểm học bao gồm các thành phần nào",
+    "intent": "danh_gia_hoc_phan",
+    "intent_prediction": {
+      "name": "hoc_phan_thuc_hanh",
+      "confidence": 0.13643595576286316
+    }
+  },
+  {
+    "text": "giới thiệu về điểm trung bình chung học kỳ",
+    "intent": "DTB_hoc_ky",
+    "intent_prediction": {
+      "name": "DTB_tich_luy",
+      "confidence": 0.2563386857509613
+    }
+  },
+  {
+    "text": "ĐTBCNH",
+    "intent": "DTB_nam_hoc",
+    "intent_prediction": {
+      "name": "DTB_tich_luy",
+      "confidence": 0.6974897384643555
+    }
+  },
+  {
+    "text": "loại trung bình",
+    "intent": "xep_loai",
+    "intent_prediction": {
+      "name": "DTB_tich_luy",
+      "confidence": 0.6300457715988159
+    }
+  },
+  {
+    "text": "thi có cần mang thẻ sinh viên không",
+    "intent": "quy_dinh_thi_ktra",
+    "intent_prediction": {
+      "name": "thi_ket_thuc_hoc_phan",
+      "confidence": 0.24754734337329865
+    }
+  },
+  {
+    "text": "let's go",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.5602445602416992
+    }
+  },
+  {
+    "text": "good night",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.8692476749420166
+    }
+  },
+  {
+    "text": "thank you",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.29390621185302734
+    }
+  },
+  {
+    "text": "phạm vi quy định nội quy trường",
+    "intent": "quy_dinh",
+    "intent_prediction": {
+      "name": "sv_chinh_quy",
+      "confidence": 0.2491622418165207
+    }
+  },
+  {
+    "text": "thời gian học tập của một tín chỉ là bao nhiêu",
+    "intent": "tin_chi",
+    "intent_prediction": {
+      "name": "thoi_luong_tin_chi",
+      "confidence": 0.7546430230140686
+    }
+  },
+  {
+    "text": "chương trình đào tạo 4 năm cần bao nhiêu chỉ để tốt nghiệp",
+    "intent": "tin_chi_hoc_4_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_5_nam",
+      "confidence": 0.4826144278049469
+    }
+  },
+  {
+    "text": "học bao nhiêu chỉ để hoàn thành chương trình 4 năm",
+    "intent": "tin_chi_hoc_4_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_5_nam",
+      "confidence": 0.47893112897872925
+    }
+  },
+  {
+    "text": "lượng tín chỉ khi học 5 năm",
+    "intent": "tin_chi_hoc_5_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_4_nam",
+      "confidence": 0.545168399810791
+    }
+  },
+  {
+    "text": "tín chỉ học 5 năm",
+    "intent": "tin_chi_hoc_5_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_4_nam",
+      "confidence": 0.4624278247356415
+    }
+  },
+  {
+    "text": "mức học bổng",
+    "intent": "muc_hoc_bong",
+    "intent_prediction": {
+      "name": "xet_hoc_bong",
+      "confidence": 0.6868339776992798
+    }
+  },
+  {
+    "text": "có cần nộp phí để nhận bản sao bằng tốt nghiệp không",
+    "intent": "cong_nhan_tot_nghiep",
+    "intent_prediction": {
+      "name": "xet_tot_nghiep",
+      "confidence": 0.4172501862049103
+    }
+  },
+  {
+    "text": "drl",
+    "intent": "diem_ren_luyen",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.3474256694316864
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.4088520109653473
+    }
+  },
+  {
+    "text": "cu",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.18639831244945526
+    }
+  },
+  {
+    "text": "điểm trung bình tích lũy cần bao nhiêu để tích lũy",
+    "intent": "xet_tot_nghiep",
+    "intent_prediction": {
+      "name": "DTB_tich_luy",
+      "confidence": 0.6318231821060181
+    }
+  },
+  {
+    "text": "lượng tín chỉ khi học 4 năm",
+    "intent": "tin_chi_hoc_4_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_5_nam",
+      "confidence": 0.4369354844093323
+    }
+  },
+  {
+    "text": "chương trình đào tạo 4.5 năm học bao nhiêu chỉ",
+    "intent": "tin_chi_hoc_4_5_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_4_nam",
+      "confidence": 0.38597798347473145
+    }
+  },
+  {
+    "text": "số tín chỉ cần hoàn thành trong khung đào tạo 5 năm",
+    "intent": "tin_chi_hoc_5_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_4_nam",
+      "confidence": 0.5974799394607544
+    }
+  },
+  {
+    "text": "số chỉ cần học theo chương trình 5 năm",
+    "intent": "tin_chi_hoc_5_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_4_nam",
+      "confidence": 0.4802309572696686
+    }
+  },
+  {
+    "text": "học bao nhiêu chỉ để hoàn thành chương trình 5 năm",
+    "intent": "tin_chi_hoc_5_nam",
+    "intent_prediction": {
+      "name": "tin_chi_hoc_4_nam",
+      "confidence": 0.551629364490509
+    }
+  },
+  {
+    "text": "học bổng",
+    "intent": "xet_hoc_bong",
+    "intent_prediction": {
+      "name": "muc_hoc_bong",
+      "confidence": 0.8047275543212891
+    }
+  },
+  {
+    "text": "quyết định công nhận tốt nghiệp",
+    "intent": "hoi_dong_xet_tot_nghiep",
+    "intent_prediction": {
+      "name": "cong_nhan_tot_nghiep",
+      "confidence": 0.6958186030387878
+    }
+  },
+  {
+    "text": "làm sao để đạt điểm mức giỏi",
+    "intent": "diem_B_plus",
+    "intent_prediction": {
+      "name": "quy_dinh_muc_hoc_bong",
+      "confidence": 0.20333825051784515
+    }
+  }
+]
