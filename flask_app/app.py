@@ -288,7 +288,7 @@ def get_favorites():
         cursor = conn.cursor(dictionary=True)
         
         query = '''
-            SELECT id, message_id, conversation_id, content, message_type, created_at
+            SELECT id, conversation_id, content, message_type, created_at
             FROM favorites
             WHERE user_id = %s
             ORDER BY created_at DESC
